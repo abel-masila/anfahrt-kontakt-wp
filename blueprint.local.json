@@ -1,0 +1,39 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Bernstein-Motel Marchegg – Test-Website (lokal)",
+		"description": "WordPress-Version der Bernstein-Motel-Website mit allen Inhalten.",
+		"author": "abel-masila"
+	},
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"login": true,
+	"steps": [
+		{
+			"step": "setSiteLanguage",
+			"language": "de_AT"
+		},
+		{
+			"step": "activateTheme",
+			"themeFolderName": "bernstein"
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "bernstein-core/bernstein-core.php"
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp bernstein seed"
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp user meta update admin show_admin_bar_front false"
+		}
+	]
+}

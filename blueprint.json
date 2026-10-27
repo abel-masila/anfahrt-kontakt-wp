@@ -1,0 +1,59 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Bernstein-Motel Marchegg – Test-Website",
+		"description": "WordPress-Version der Bernstein-Motel-Website mit allen Inhalten.",
+		"author": "abel-masila"
+	},
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"login": true,
+	"steps": [
+		{
+			"step": "setSiteLanguage",
+			"language": "de_AT"
+		},
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/abel-masila/anfahrt-kontakt-wp",
+				"ref": "main",
+				"refType": "branch",
+				"path": "themes/bernstein"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "bernstein"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/abel-masila/anfahrt-kontakt-wp",
+				"ref": "main",
+				"refType": "branch",
+				"path": "plugins/bernstein-core"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "bernstein-core"
+			}
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp bernstein seed"
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp user meta update admin show_admin_bar_front false"
+		}
+	]
+}

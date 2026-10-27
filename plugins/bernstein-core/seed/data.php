@@ -1,0 +1,128 @@
+<?php
+/**
+ * Startinhalte – übernommen aus der Next.js-Demo (src/data/*.ts).
+ * Bilder liegen in seed/images/ (Quelle: www.motel-marchegg.at).
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+return array(
+	/* Dateiname => Alt-Text in der Mediathek */
+	'images'     => array(
+		'rundgang-bernsteinmotelmarchegg.jpg'                 => 'Vorderansicht des Bernstein-Motels Marchegg',
+		'rundgang-motelmarchegg-marchfeld.jpg'                => 'Das Bernstein-Motel mit Parkplatz und Fahnen',
+		'rundgang-durchs-bernstein-motel-marchegg.jpg'        => 'Außenansicht des Motels mit Parkplätzen',
+		'rundgang-zimmer-apartments.jpg'                      => 'Das Bernstein-Motel mit Zimmerzugängen im Freien',
+		'rundgang-motel-in-marchegg.jpg'                      => 'Fassade des Motels mit Balkon und Zimmerzugängen',
+		'rundgang-marchegg-motel.jpg'                         => 'Balkon mit direkten Zimmerzugängen',
+		'zimmer-zweibett.jpg'                                 => 'Doppelzimmer mit moderner Ausstattung',
+		'zimmer-dreibett.jpg'                                 => 'Dreibettzimmer mit Stockbett',
+		'rundgang-zweibettzimmer.jpg'                         => 'Doppelzimmer mit Kleiderschrank',
+		'rundgang-zweibett-zimmer.jpg'                        => 'Doppelzimmer mit Schreibtisch und TV',
+		'rundgang-motelmarchegg-zweibettzimmer.jpg'           => 'Zweibettzimmer mit Flatscreen-TV',
+		'rundgang-vollausgestattete-zimmer.jpg'               => 'Zimmer mit Schreibtisch und Sat-TV',
+		'rundgang-apartment-marchegg.jpg'                     => 'Badezimmer mit Dusche, WC und Waschbecken',
+		'rundgang-motel-bernstein-marchegg-eingangsbereich.jpg' => 'Stiegenhaus im Eingangsbereich des Motels',
+		'rundgang-motel-in-marchegg1.jpg'                     => 'Gemeinschaftsraum mit Essbereich',
+		'rundgang-bernsteinmotel-marchegg.jpg'                => 'Modernes Zimmer im Bernstein-Motel',
+		'natur-umwelt-storchenkolonie.jpg'                    => 'Storchenkolonie in Marchegg',
+		'natur-umwelt-stoerche-in-marchegg.jpg'               => 'Störche in den March-Auen',
+		'kunst-kultur-schloss-marchegg.jpg'                   => 'Schloss Marchegg',
+		'kunst-kultur-schloss-hof.jpg'                        => 'Schloss Hof',
+		'sport-bewegung-radrundfahrt.jpg'                     => 'Radfahren im Marchfeld',
+		'sport-bewegung-march.jpg'                            => 'Die March bei Marchegg',
+	),
+
+	'rooms'      => array(
+		array(
+			'slug'           => 'doppelzimmer',
+			'title'          => 'Doppel- / Zweibettzimmer',
+			'capacity'       => 2,
+			'capacity_label' => '1–2 Personen',
+			'description'    => 'Unsere modernen und gemütlichen Doppelzimmer – wahlweise mit Doppelbett oder zwei getrennten Betten. Eines der sechzehn Zimmer ist barrierefrei ausgestattet.',
+			'image'          => 'zimmer-zweibett.jpg',
+			'image_alt'      => 'Doppelzimmer im Bernstein-Motel Marchegg mit zwei Betten',
+			'price'          => 40,
+			'price_note'     => 'pro Person / Nacht',
+			'features'       => array( 'Doppelbett oder getrennte Betten', 'Dusche / WC & Pflegeprodukte', 'Flatscreen mit Sat-TV', 'Kostenloses WLAN', '100 % rauchfrei' ),
+			'accessible'     => true,
+			'count'          => 16,
+		),
+		array(
+			'slug'           => 'dreibett-standard',
+			'title'          => '3-Bettzimmer Standard',
+			'capacity'       => 3,
+			'capacity_label' => 'bis 3 Personen',
+			'description'    => 'Praktisch und preiswert für Familien oder kleine Gruppen: drei vollwertige Betten mit der bewährten Bernstein-Ausstattung.',
+			'image'          => 'zimmer-dreibett.jpg',
+			'image_alt'      => '3-Bettzimmer Standard im Bernstein-Motel Marchegg',
+			'price'          => 32,
+			'price_note'     => 'pro Person / Nacht',
+			'features'       => array( 'Drei vollwertige Betten', 'Dusche / WC & Pflegeprodukte', 'Flatscreen mit Sat-TV', 'Kostenloses WLAN', '100 % rauchfrei' ),
+			'accessible'     => false,
+			'count'          => 3,
+		),
+		array(
+			'slug'           => 'dreibett-comfort',
+			'title'          => '3-Bettzimmer Comfort',
+			'capacity'       => 3,
+			'capacity_label' => 'bis 3 Personen',
+			'description'    => 'Mehr Platz und Komfort für Ihren Aufenthalt: unsere Comfort-Dreibettzimmer bieten großzügigeren Raum für bis zu drei Gäste.',
+			'image'          => 'rundgang-motelmarchegg-zweibettzimmer.jpg',
+			'image_alt'      => 'Großzügiges Comfort-Zimmer im Bernstein-Motel Marchegg',
+			'price'          => 35,
+			'price_note'     => 'pro Person / Nacht',
+			'features'       => array( 'Großzügiger Grundriss', 'Dusche / WC & Pflegeprodukte', 'Flatscreen mit Sat-TV', 'Kostenloses WLAN', '100 % rauchfrei' ),
+			'accessible'     => false,
+			'count'          => 3,
+		),
+	),
+
+	'activities' => array(
+		array( 'natur-umwelt', 'Natur & Umwelt', 'Storchenstadt Marchegg', 'Marchegg ist berühmt für die größte baumbrütende Storchenkolonie Mitteleuropas. Die geheimnisvollen Aulandschaften der March laden direkt vor der Haustür zum Entdecken ein – inklusive WWF-Auenreservat.', 'natur-umwelt-storchenkolonie.jpg', 'Storchenkolonie in den March-Auen bei Marchegg' ),
+		array( 'radfahren-bewegung', 'Radfahren & Bewegung', 'Aktiv im Marchfeld', 'Bestens ausgebaute Rad- und Wanderwege durchziehen das Marchfeld. Ob Radrundfahrt entlang der March oder gemütliche Rundwanderung – Ihre Räder stehen sicher in unserer absperrbaren Fahrradgarage.', 'sport-bewegung-radrundfahrt.jpg', 'Radweg durch das Marchfeld bei Marchegg' ),
+		array( 'kunst-kultur', 'Kunst & Kultur', 'Marchfeldschlösser', 'Die prachtvollen Marchfeldschlösser liegen in unmittelbarer Nähe: Schloss Marchegg, Schloss Hof und Schloss Niederweiden bieten Ausstellungen, Feste und barocke Gartenkunst das ganze Jahr über.', 'kunst-kultur-schloss-hof.jpg', 'Schloss Hof im Marchfeld' ),
+		array( 'essen-trinken', 'Essen & Trinken', 'Direkt gegenüber', 'Das Café Bernstein direkt gegenüber verwöhnt Sie ab 6:30 Uhr mit Frühstück und ist zugleich Restaurant und Bar. In Marchegg warten außerdem Wirtshäuser mit herzhafter Hausmannskost und regionalen Wildspezialitäten.', 'rundgang-motel-in-marchegg1.jpg', 'Gemeinschaftsraum mit Essbereich im Bernstein-Motel Marchegg' ),
+		array( 'schloss-marchegg', 'Schloss Marchegg', 'Direkt im Ort', 'Das im 13. Jahrhundert gegründete Schloss Marchegg ist das Wahrzeichen der Stadt – mit sehenswerten Ausstellungen und einem herrlichen Blick auf die Storchennester in den Auwiesen.', 'kunst-kultur-schloss-marchegg.jpg', 'Schloss Marchegg' ),
+		array( 'wien-bratislava', 'Wien & Bratislava', 'Zwei Hauptstädte in Reichweite', 'Die zentrale Lage macht’s möglich: Beide Metropolen erreichen Sie bequem mit dem Auto oder mit dem Zug – ideal für Tagesausflüge, Konzerte oder Geschäftstermine.', 'sport-bewegung-march.jpg', 'Die March – Grenzfluss zwischen Österreich und der Slowakei' ),
+	),
+
+	'faq'        => array(
+		array( 'Wie kann ich im Bernstein-Motel reservieren?', 'Sie können über unsere Website, per E-Mail an office@motel-marchegg.at oder telefonisch unter +43 (0) 660 / 14 14 140 reservieren. Nach Ihrer Anfrage prüfen wir die Verfügbarkeit und senden Ihnen eine Reservierungsbestätigung – erst mit dieser Bestätigung ist Ihre Reservierung gültig.' ),
+		array( 'Bis wann kann ich am Anreisetag einchecken?', 'Der Check-in ist von 14:00 bis 21:00 Uhr möglich. Ein späterer Check-in ist nach Vereinbarung möglich – rufen Sie uns einfach an.' ),
+		array( 'Bis wann muss ich am Abreisetag auschecken?', 'Zum Check-out haben Sie am Abreisetag bis 10:00 Uhr Zeit.' ),
+		array( 'Gibt es Parkplätze?', 'Ja, pro Zimmer steht ein kostenloser Parkplatz direkt beim Motel zur Verfügung.' ),
+		array( 'Gibt es WLAN?', 'Ja, kostenloses WLAN steht in allen Zimmern zur Verfügung.' ),
+		array( 'Sind Hunde erlaubt?', 'Ja, Hunde sind bei uns willkommen. Wir verrechnen € 9,00 pro Nacht.' ),
+		array( 'Gibt es Frühstück?', 'Direkt gegenüber dem Motel befindet sich das Café Bernstein. Dort frühstücken Sie Montag bis Samstag ab 6:30 Uhr, an Sonn- und Feiertagen ab 8:00 Uhr. Frühaufsteher können nach Voranmeldung Montag bis Freitag bereits ab 6:00 Uhr frühstücken.' ),
+		array( 'Kann ich mein Fahrrad sicher abstellen?', 'Ja, unsere absperrbare Fahrradgarage steht allen Gästen kostenlos zur Verfügung – ideal für Radreisende am Marchfeld-Radweg.' ),
+		array( 'Welche Zahlungsmöglichkeiten gibt es?', 'Sie können bar, mit Bankomatkarte oder mit Kreditkarte (VISA und Mastercard) bezahlen.' ),
+		array( 'Wie funktionieren Gruppenreservierungen?', 'Für Gruppenreservierungen kontaktieren Sie uns bitte direkt per E-Mail oder Telefon – wir erstellen Ihnen gerne ein passendes Angebot.' ),
+	),
+
+	/* Dateiname => Kategorie; Reihenfolge = Anzeige-Reihenfolge, Alt-Text aus 'images' */
+	'gallery'    => array(
+		'rundgang-bernsteinmotelmarchegg.jpg'                 => 'aussen',
+		'rundgang-motelmarchegg-marchfeld.jpg'                => 'aussen',
+		'rundgang-durchs-bernstein-motel-marchegg.jpg'        => 'aussen',
+		'rundgang-zimmer-apartments.jpg'                      => 'aussen',
+		'rundgang-motel-in-marchegg.jpg'                      => 'aussen',
+		'rundgang-marchegg-motel.jpg'                         => 'aussen',
+		'zimmer-zweibett.jpg'                                 => 'zimmer',
+		'zimmer-dreibett.jpg'                                 => 'zimmer',
+		'rundgang-zweibettzimmer.jpg'                         => 'zimmer',
+		'rundgang-zweibett-zimmer.jpg'                        => 'zimmer',
+		'rundgang-motelmarchegg-zweibettzimmer.jpg'           => 'zimmer',
+		'rundgang-vollausgestattete-zimmer.jpg'               => 'zimmer',
+		'rundgang-apartment-marchegg.jpg'                     => 'zimmer',
+		'rundgang-motel-bernstein-marchegg-eingangsbereich.jpg' => 'gemeinschaft',
+		'rundgang-motel-in-marchegg1.jpg'                     => 'gemeinschaft',
+		'rundgang-bernsteinmotel-marchegg.jpg'                => 'zimmer',
+		'natur-umwelt-storchenkolonie.jpg'                    => 'umgebung',
+		'natur-umwelt-stoerche-in-marchegg.jpg'               => 'umgebung',
+		'kunst-kultur-schloss-marchegg.jpg'                   => 'umgebung',
+		'kunst-kultur-schloss-hof.jpg'                        => 'umgebung',
+		'sport-bewegung-radrundfahrt.jpg'                     => 'umgebung',
+		'sport-bewegung-march.jpg'                            => 'umgebung',
+	),
+);

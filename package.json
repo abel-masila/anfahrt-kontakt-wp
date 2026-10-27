@@ -1,0 +1,17 @@
+{
+	"name": "anfahrt-kontakt-wp",
+	"private": true,
+	"description": "Bernstein-Motel Marchegg – WordPress-Theme und Plugin",
+	"scripts": {
+		"start": "wp-env start",
+		"stop": "wp-env stop",
+		"seed": "wp-env run cli wp bernstein seed",
+		"seed:force": "wp-env run cli wp bernstein seed --force",
+		"playground": "wp-playground-cli server --blueprint=blueprint.local.json --mount=./themes/bernstein:/wordpress/wp-content/themes/bernstein --mount=./plugins/bernstein-core:/wordpress/wp-content/plugins/bernstein-core --login --port=9400",
+		"build": "bash scripts/build-zips.sh"
+	},
+	"devDependencies": {
+		"@wordpress/env": "^12.0.0",
+		"@wp-playground/cli": "^3.1.61"
+	}
+}
