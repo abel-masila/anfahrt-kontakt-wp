@@ -271,6 +271,26 @@ function bm_render_contact_card(): string {
 	return bm_wrap( 'bm-contact bm-panel', $html, 'div', array( 'data-bm-reveal' => '' ) );
 }
 
+/** Google-Karte mit der Lage des Motels. */
+function bm_render_map(): string {
+	$address = bm_setting( 'street' ) . ', ' . bm_setting( 'zip' ) . ' ' . bm_setting( 'city' );
+	$embed   = 'https://www.google.com/maps?' . http_build_query(
+		array(
+			'q'      => get_bloginfo( 'name' ) . ', ' . $address,
+			'hl'     => 'de',
+			'z'      => 15,
+			'output' => 'embed',
+		)
+	);
+
+	$html = sprintf(
+		'<iframe src="%s" title="%s" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>',
+		esc_url( $embed ),
+		esc_attr( 'Karte: ' . $address )
+	);
+	return bm_wrap( 'bm-map bm-panel', $html, 'div', array( 'data-bm-reveal' => '' ) );
+}
+
 function bm_render_directions(): string {
 	$items = array(
 		array( 'map-pin', 'Das Motel liegt zentral in Marchegg – ' . bm_setting( 'street' ) . ', ' . bm_setting( 'zip' ) . ' ' . bm_setting( 'city' ) . ', im Herzen des Marchfelds.' ),

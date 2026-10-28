@@ -157,7 +157,9 @@ function bm_render_activities( array $attributes ): string {
 			esc_html( (string) get_post_meta( $post->ID, '_bm_description', true ) )
 		);
 	}
-	return bm_wrap( 'bm-grid bm-grid--3', $html );
+	// Bleiben in der letzten Dreierreihe zwei Karten übrig, stehen diese zwei breit in der ersten Reihe (z. B. 2 + 3).
+	$class = count( $posts ) % 3 === 2 ? 'bm-grid bm-grid--3 bm-grid--lead-2' : 'bm-grid bm-grid--3';
+	return bm_wrap( $class, $html );
 }
 
 function bm_render_gallery( array $attributes ): string {

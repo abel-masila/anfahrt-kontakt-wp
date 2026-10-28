@@ -259,6 +259,11 @@ body.bm-menu-open { overflow: hidden; }
 .bm-grid { display: grid; gap: 1.5rem; }
 @media (min-width: 640px) { .bm-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) { .bm-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) {
+	.bm-grid--lead-2 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+	.bm-grid--lead-2 > * { grid-column: span 2; }
+	.bm-grid--lead-2 > :nth-child(-n + 2) { grid-column: span 3; }
+}
 
 .bm-card {
 	display: flex;
@@ -366,6 +371,13 @@ body.bm-menu-open { overflow: hidden; }
 .bm-directions ul { margin: 1rem 0 0; padding: 0; list-style: none; }
 .bm-directions li { display: flex; gap: 0.75rem; font-size: 0.875rem; line-height: 1.65; color: var(--bm-body); }
 .bm-directions li + li { margin-top: 1rem; }
+
+/* ---------- Karte (Google Maps) ---------- */
+
+.bm-map { overflow: hidden; aspect-ratio: 4 / 3; background: var(--bm-surface-alt); }
+@media (min-width: 640px) { .bm-map { aspect-ratio: 16 / 10; } }
+.bm-map iframe { display: block; width: 100%; height: 100%; border: 0; }
+.bm-split .wp-block-column > * + .bm-map { margin-top: 2rem; }
 
 /* ---------- Preisübersicht ---------- */
 

@@ -21,7 +21,7 @@
 
 	var blocks = [
 		'header', 'footer', 'trust-bar', 'rooms', 'price-table', 'price-conditions', 'amenities',
-		'location-highlights', 'activities', 'gallery', 'faq', 'contact-card', 'directions',
+		'location-highlights', 'activities', 'gallery', 'faq', 'contact-card', 'directions', 'map',
 		'cta-banner', 'reservation-form', 'booking-demo',
 	];
 

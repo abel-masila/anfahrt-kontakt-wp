@@ -93,6 +93,7 @@ function bms_pages( array $media ): array {
 							bms_h( 'Wir sind gerne für Sie da' ),
 							bms_p( 'Haben Sie Fragen zu Ihrer Reservierung, zur Anreise oder zu unseren Zimmern? Rufen Sie an oder schreiben Sie uns – Alexandra Pataki kümmert sich persönlich um Ihr Anliegen.' ),
 							bms_p( 'Antworten auf häufige Fragen finden Sie außerdem in unseren <a href="/fragen-antworten/">Fragen &amp; Antworten</a>.' ),
+							bms_block( 'map' ),
 						),
 						array( bms_block( 'contact-card' ) ),
 					),
@@ -183,7 +184,7 @@ function bms_pages( array $media ): array {
 							array(
 								array( bms_block( 'contact-card' ) ),
 								array(
-									bms_image( $media['rundgang-motelmarchegg-marchfeld.jpg'], 'bm-photo bm-photo--wide' ),
+									bms_block( 'map' ),
 									bms_block( 'directions' ),
 								),
 							),
@@ -269,6 +270,8 @@ function bms_pages( array $media ): array {
 						bms_p( 'Wir verarbeiten Ihre personenbezogenen Daten auf Grundlage der EU-Datenschutz-Grundverordnung (DSGVO, VO (EU) 2016/679), des Datenschutzgesetzes (DSG) sowie des Telekommunikationsgesetzes (TKG).' ),
 						bms_h( 'Verarbeitete Daten' ),
 						bms_p( 'Im Rahmen Ihrer Reservierung und Ihres Aufenthalts verarbeiten wir insbesondere: Stammdaten (Name, Anschrift, Kontaktdaten), Daten aus Reisedokumenten (gemäß gesetzlicher Meldepflicht), Zahlungsinformationen sowie Aufenthaltsdaten. Die Daten werden ausschließlich zur Abwicklung Ihrer Reservierung, zur Erfüllung gesetzlicher Pflichten und zur Betreuung während Ihres Aufenthalts verwendet.' ),
+						bms_h( 'Google Maps' ),
+						bms_p( 'Auf den Seiten „Startseite“ und „Anfahrt &amp; Kontakt“ binden wir eine Karte von Google Maps ein (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland), damit Sie uns leicht finden. Beim Aufruf dieser Seiten werden insbesondere Ihre IP-Adresse und technische Daten Ihres Browsers an Google übermittelt, möglicherweise auch in die USA. Google kann dabei Cookies setzen. Rechtsgrundlage ist unser berechtigtes Interesse an einer leicht auffindbaren Anfahrtsbeschreibung (Art. 6 Abs. 1 lit. f DSGVO).' ),
 						bms_h( 'Ihre Rechte' ),
 						bms_p( 'Ihnen stehen die Rechte auf Widerruf, Auskunft, Löschung, Richtigstellung, Einschränkung und Übertragung Ihrer Daten zu. Wenden Sie sich dazu bitte an office@motel-marchegg.at. Beschwerden richten Sie an die Österreichische Datenschutzbehörde, Wien.' ),
 						$legal_note( 'Diese Seite ist Teil einer Design-Demo. Die Datenschutzerklärung wird vor Veröffentlichung rechtlich geprüft und finalisiert.' ),

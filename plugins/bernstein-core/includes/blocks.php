@@ -81,6 +81,7 @@ function bm_register_blocks(): void {
 		'faq'                 => array( 'Fragen & Antworten', 'bm_render_faq', array(), '', true ),
 		'contact-card'        => array( 'Kontakt-Karte', 'bm_render_contact_card', array(), '', true ),
 		'directions'          => array( 'Anfahrt', 'bm_render_directions', array(), '', true ),
+		'map'                 => array( 'Karte (Google Maps)', 'bm_render_map', array(), '', true ),
 		'cta-banner'          => array( 'Reservierungs-Aufruf', 'bm_render_cta_banner', array(), '', true ),
 		'reservation-form'    => array( 'Anfrage-Formular', 'bm_render_reservation_form', array(), 'bernstein-reservation', true ),
 		'booking-demo'        => array( 'Buchungs-Vorschau', 'bm_render_booking_demo', array(), 'bernstein-booking', true ),
