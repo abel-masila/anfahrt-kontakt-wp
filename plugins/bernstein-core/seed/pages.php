@@ -19,7 +19,6 @@ function bms_pages( array $media ): array {
 		bms_hero(
 			$media['hero-reisende-marchegg.jpg'],
 			array(
-				bms_p( 'Familiengeführt · Marchegg im Marchfeld', 'bm-eyebrow' ),
 				bms_h( 'Willkommen im Bernstein Motel in Marchegg!', 1 ),
 				bms_p( 'Modern, sauber und fair – Ihr ideales Sprungbrett in einen erlebnisreichen Tag zwischen Storchenstadt, Marchfeldschlössern und den Metropolen Wien und Bratislava.', 'bm-lead' ),
 				bms_buttons(
@@ -34,7 +33,7 @@ function bms_pages( array $media ): array {
 		bms_block( 'trust-bar' ),
 		bms_section(
 			array(
-				bms_heading( 'Zimmer & Preise', 'Moderne Zimmer zu fairen Preisen', 'Sechzehn Doppelzimmer (eines barrierefrei), drei Standard- und drei Comfort-Dreibettzimmer. Alle Zimmer sind auch als Einzelzimmer reservierbar: € 55,00 pro Nacht.' ),
+				bms_heading( 'Moderne Zimmer zu fairen Preisen', 'Sechzehn Doppelzimmer (eines barrierefrei), drei Standard- und drei Comfort-Dreibettzimmer. Alle Zimmer sind auch als Einzelzimmer reservierbar: € 55,00 pro Nacht.' ),
 				bms_block( 'rooms', array( 'compact' => true ) ),
 				bms_more( 'Alle Zimmer & Preisdetails', '/zimmer/' ),
 			)
@@ -45,7 +44,6 @@ function bms_pages( array $media ): array {
 					array(
 						array( bms_image( $media['rundgang-bernsteinmotelmarchegg.jpg'], 'bm-photo' ) ),
 						array(
-							bms_p( 'Über das Motel', 'bm-eyebrow' ),
 							bms_h( 'Persönlich geführt, ehrlich kalkuliert' ),
 							bms_p( 'Ob Privat- oder Geschäftsreisender – durch die zentrale Lage des Motels und das vielfältige Angebot in der Umgebung ist das Bernstein-Motel Marchegg das ideale Sprungbrett in einen erlebnisreichen Tag. Unser Beherbergungsbetrieb bietet Ihnen eine moderne, saubere Übernachtungsmöglichkeit zu einem fairen Preis.' ),
 							bms_p( 'Eingebettet in eine Landschaft aus Marchfeldschlössern, Rad- und Wanderwegen und den geheimnisvollen Aulandschaften von March und Donau – und dank der zentralen Lage sind die Metropolen Wien und Bratislava sowohl mit dem Auto als auch mit dem Zug erreichbar – ist unser Motel ein perfekter Ausgangspunkt.' ),
@@ -60,28 +58,28 @@ function bms_pages( array $media ): array {
 		),
 		bms_section(
 			array(
-				bms_heading( 'Ausstattung', 'Alles, was Sie brauchen', 'Alle Zimmer sind gänzlich gleich ausgestattet – 100 % rauchfrei, mit eigenem Bad, Sat-TV und kostenlosem WLAN.' ),
+				bms_heading( 'Alles, was Sie brauchen', 'Alle Zimmer sind gänzlich gleich ausgestattet – 100 % rauchfrei, mit eigenem Bad, Sat-TV und kostenlosem WLAN.' ),
 				bms_block( 'amenities', array( 'limit' => 6 ) ),
 				bms_more( 'Gesamte Ausstattung ansehen', '/ausstattung/' ),
 			)
 		),
 		bms_section(
 			array(
-				bms_heading( 'Die Lage', 'Mitten im Marchfeld – nah an zwei Hauptstädten', '', 2, 'bm-heading--left' ),
+				bms_heading( 'Mitten im Marchfeld – nah an zwei Hauptstädten', '', 2, 'bm-heading--left' ),
 				bms_block( 'location-highlights' ),
 			),
 			'bm-bg-navy'
 		),
 		bms_section(
 			array(
-				bms_heading( 'Aktivitäten', 'Erleben Sie die Region', 'Natur, Kultur, Radwege und Kulinarik – rund um Marchegg wartet mehr, als man auf den ersten Blick vermutet.' ),
+				bms_heading( 'Erleben Sie die Region', 'Natur, Kultur, Radwege und Kulinarik – rund um Marchegg wartet mehr, als man auf den ersten Blick vermutet.' ),
 				bms_block( 'activities', array( 'limit' => 3 ) ),
 				bms_more( 'Alle Aktivitäten entdecken', '/aktivitaeten/' ),
 			)
 		),
 		bms_section(
 			array(
-				bms_heading( 'Galerie', 'Ein erster Rundgang', 'Machen Sie sich ein Bild von unseren Zimmern, dem Haus und der Umgebung.' ),
+				bms_heading( 'Ein erster Rundgang', 'Machen Sie sich ein Bild von unseren Zimmern, dem Haus und der Umgebung.' ),
 				bms_block( 'gallery', array( 'preview' => true, 'limit' => 8 ) ),
 				bms_more( 'Zur ganzen Galerie', '/galerie/' ),
 			),
@@ -92,7 +90,6 @@ function bms_pages( array $media ): array {
 				bms_columns(
 					array(
 						array(
-							bms_p( 'Kontakt', 'bm-eyebrow' ),
 							bms_h( 'Wir sind gerne für Sie da' ),
 							bms_p( 'Haben Sie Fragen zu Ihrer Reservierung, zur Anreise oder zu unseren Zimmern? Rufen Sie an oder schreiben Sie uns – Alexandra Pataki kümmert sich persönlich um Ihr Anliegen.' ),
 							bms_p( 'Antworten auf häufige Fragen finden Sie außerdem in unseren <a href="/fragen-antworten/">Fragen &amp; Antworten</a>.' ),
@@ -121,7 +118,7 @@ function bms_pages( array $media ): array {
 			'blocks'  => array(
 				bms_section(
 					array(
-						bms_heading( 'Zimmer & Preise', 'Reservieren und buchen Sie gleich Ihr Zimmer!', 'Genießen Sie eine oder mehrere Nächte in unseren modernen und gemütlichen Zimmern. Alle Zimmer sind gänzlich gleich ausgestattet und können auch als Einzelzimmer reserviert werden.', 1 ),
+						bms_heading( 'Reservieren und buchen Sie gleich Ihr Zimmer!', 'Genießen Sie eine oder mehrere Nächte in unseren modernen und gemütlichen Zimmern. Alle Zimmer sind gänzlich gleich ausgestattet und können auch als Einzelzimmer reserviert werden.', 1 ),
 						bms_block( 'rooms' ),
 						bms_block( 'price-table' ),
 						bms_block( 'price-conditions' ),
@@ -137,7 +134,7 @@ function bms_pages( array $media ): array {
 			'blocks'  => array(
 				bms_section(
 					array(
-						bms_heading( 'Ausstattung', 'Durchdacht bis ins Detail', 'Alle Zimmer sind gänzlich gleich ausgestattet – damit Sie sich bei jedem Aufenthalt auf denselben Komfort verlassen können.', 1 ),
+						bms_heading( 'Durchdacht bis ins Detail', 'Alle Zimmer sind gänzlich gleich ausgestattet – damit Sie sich bei jedem Aufenthalt auf denselben Komfort verlassen können.', 1 ),
 						bms_block( 'amenities' ),
 					),
 					'bm-section--top'
@@ -152,7 +149,7 @@ function bms_pages( array $media ): array {
 			'blocks'  => array(
 				bms_section(
 					array(
-						bms_heading( 'Aktivitäten & Umgebung', 'Erlebnisreiche Tage rund um Marchegg', 'Eingebettet in eine Landschaft aus Marchfeldschlössern, Rad- und Wanderwegen und den geheimnisvollen Aulandschaften von March und Donau ist unser Motel der perfekte Ausgangspunkt.', 1 ),
+						bms_heading( 'Erlebnisreiche Tage rund um Marchegg', 'Eingebettet in eine Landschaft aus Marchfeldschlössern, Rad- und Wanderwegen und den geheimnisvollen Aulandschaften von March und Donau ist unser Motel der perfekte Ausgangspunkt.', 1 ),
 						bms_block( 'activities' ),
 					),
 					'bm-section--top'
@@ -167,7 +164,7 @@ function bms_pages( array $media ): array {
 			'blocks'  => array(
 				bms_section(
 					array(
-						bms_heading( 'Galerie & Rundgang', 'Machen Sie einen Rundgang durch unser Motel', 'Zimmer, Gemeinschaftsbereiche, Außenansichten und die schönsten Seiten der Umgebung – klicken Sie sich durch.', 1 ),
+						bms_heading( 'Machen Sie einen Rundgang durch unser Motel', 'Zimmer, Gemeinschaftsbereiche, Außenansichten und die schönsten Seiten der Umgebung – klicken Sie sich durch.', 1 ),
 						bms_block( 'gallery' ),
 					),
 					'bm-section--top'
@@ -181,7 +178,7 @@ function bms_pages( array $media ): array {
 			'blocks'  => array(
 				bms_section(
 					array(
-						bms_heading( 'Anfahrt & Kontakt', 'Wir freuen uns auf Ihr Kommen', $owner, 1 ),
+						bms_heading( 'Wir freuen uns auf Ihr Kommen', $owner, 1 ),
 						bms_columns(
 							array(
 								array( bms_block( 'contact-card' ) ),
@@ -204,7 +201,7 @@ function bms_pages( array $media ): array {
 			'blocks'  => array(
 				bms_section(
 					array(
-						bms_heading( 'Reservierung', 'Zimmer unverbindlich anfragen', 'Füllen Sie das Formular aus – wir prüfen die Verfügbarkeit und melden uns rasch mit einer Reservierungsbestätigung. Erst mit dieser Bestätigung ist Ihre Reservierung gültig.', 1 ),
+						bms_heading( 'Zimmer unverbindlich anfragen', 'Füllen Sie das Formular aus – wir prüfen die Verfügbarkeit und melden uns rasch mit einer Reservierungsbestätigung. Erst mit dieser Bestätigung ist Ihre Reservierung gültig.', 1 ),
 						bms_block( 'reservation-form' ),
 					),
 					'bm-section--top bm-section--narrow'
@@ -217,7 +214,7 @@ function bms_pages( array $media ): array {
 			'blocks'  => array(
 				bms_section(
 					array(
-						bms_heading( 'Vorschau', 'Ihre Buchung in wenigen Schritten', 'So könnte eine integrierte Online-Buchung auf der neuen Website aussehen: Reisedaten wählen, Zimmer aussuchen, Preis auf einen Blick.', 1 ),
+						bms_heading( 'Ihre Buchung in wenigen Schritten', 'So könnte eine integrierte Online-Buchung auf der neuen Website aussehen: Reisedaten wählen, Zimmer aussuchen, Preis auf einen Blick.', 1 ),
 						bms_block( 'booking-demo' ),
 						bms_more( 'Lieber klassisch anfragen? Zum Anfrage-Formular', '/reservierung/' ),
 					),
@@ -231,7 +228,7 @@ function bms_pages( array $media ): array {
 			'blocks'  => array(
 				bms_section(
 					array(
-						bms_heading( 'Fragen & Antworten', 'Gut zu wissen', 'Die häufigsten Fragen rund um Ihren Aufenthalt – kurz und klar beantwortet.', 1 ),
+						bms_heading( 'Gut zu wissen', 'Die häufigsten Fragen rund um Ihren Aufenthalt – kurz und klar beantwortet.', 1 ),
 						bms_block( 'faq' ),
 					),
 					'bm-section--top bm-section--narrow'

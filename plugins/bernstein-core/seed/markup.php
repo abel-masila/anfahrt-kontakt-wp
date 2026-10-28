@@ -41,9 +41,9 @@ function bms_section( array $inner, string $class = '' ): string {
 	return bms_group( $inner, trim( 'bm-section ' . $class ), 'section' );
 }
 
-/** Überschriften-Gruppe: Dachzeile, Überschrift, Einleitung. */
-function bms_heading( string $eyebrow, string $title, string $intro = '', int $level = 2, string $class = '' ): string {
-	$inner = array( bms_p( esc_html( $eyebrow ), 'bm-eyebrow' ), bms_h( $title, $level ) );
+/** Überschriften-Gruppe: Überschrift, Einleitung. */
+function bms_heading( string $title, string $intro = '', int $level = 2, string $class = '' ): string {
+	$inner = array( bms_h( $title, $level ) );
 	if ( $intro ) {
 		$inner[] = bms_p( esc_html( $intro ), 'bm-intro' );
 	}
