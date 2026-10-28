@@ -16,7 +16,7 @@
 	--bm-muted: var(--wp--preset--color--muted);
 	--bm-on-dark: #f1f1ee;
 	--bm-on-dark-muted: #a9b0c0;
-	/* Schriften: Damion (wie die Schrift an der Fassade) nur für große Titel,
+	/* Schriften: Lobster (kräftige Schreibschrift, passend zum Logo) nur für große Titel,
 	   Barlow Condensed (wie im Logo) für Navigation, Etiketten, Preise, Buttons. */
 	--bm-font-script: var(--wp--preset--font-family--script);
 	--bm-font-display: var(--wp--preset--font-family--display);
@@ -167,8 +167,8 @@ img { max-width: 100%; height: auto; }
 .bm-more a:hover { color: var(--bm-accent); }
 
 /* ---------- Titelbild ----------
-   Der Verlauf dunkelt nur die Textseite ab, damit der echte rote Schriftzug
-   an der Fassade rechts sichtbar bleibt. */
+   Der Verlauf dunkelt nur die Textseite ab, damit die Reisende im Foto
+   (Bildmitte, Gesicht im oberen Drittel) hell und gut sichtbar bleibt. */
 
 .wp-block-cover.bm-hero {
 	min-height: 80vh !important;
@@ -178,7 +178,7 @@ img { max-width: 100%; height: auto; }
 	justify-content: flex-start;
 	border-bottom: 4px solid var(--bm-accent);
 }
-.bm-hero .wp-block-cover__image-background { object-position: 72% 40%; }
+.bm-hero .wp-block-cover__image-background { object-position: 58% 20%; }
 .bm-hero .wp-block-cover__background {
 	opacity: 1 !important;
 	background: linear-gradient(180deg, rgb(18 24 38 / 0.55) 0%, rgb(18 24 38 / 0.8) 55%, rgb(18 24 38 / 0.9) 100%) !important;

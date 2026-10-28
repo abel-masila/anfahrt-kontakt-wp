@@ -9,6 +9,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	/* Dateiname => Alt-Text in der Mediathek */
 	'images'     => array(
+		'hero-reisende-marchegg.jpg'                          => 'Fröhliche Reisende hält Ausschau – bereit für einen erlebnisreichen Tag',
 		'rundgang-bernsteinmotelmarchegg.jpg'                 => 'Vorderansicht des Bernstein-Motels Marchegg',
 		'rundgang-motelmarchegg-marchfeld.jpg'                => 'Das Bernstein-Motel mit Parkplatz und Fahnen',
 		'rundgang-durchs-bernstein-motel-marchegg.jpg'        => 'Außenansicht des Motels mit Parkplätzen',

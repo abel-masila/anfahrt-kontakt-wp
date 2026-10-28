@@ -99,16 +99,16 @@
 			"fontFamilies": [
 				{
 					"slug": "script",
-					"name": "Damion (Schrift wie an der Fassade)",
-					"fontFamily": "Damion, 'Brush Script MT', cursive",
+					"name": "Lobster (kräftige Schreibschrift wie im Logo)",
+					"fontFamily": "Lobster, 'Brush Script MT', cursive",
 					"fontFace": [
 						{
-							"fontFamily": "Damion",
+							"fontFamily": "Lobster",
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"fontDisplay": "swap",
 							"src": [
-								"file:./assets/fonts/damion-latin-400.woff2"
+								"file:./assets/fonts/lobster-latin-400.woff2"
 							]
 						}
 					]

@@ -17,7 +17,7 @@ function bms_pages( array $media ): array {
 
 	$home = array(
 		bms_hero(
-			$media['rundgang-bernsteinmotelmarchegg.jpg'],
+			$media['hero-reisende-marchegg.jpg'],
 			array(
 				bms_p( 'Familiengeführt · Marchegg im Marchfeld', 'bm-eyebrow' ),
 				bms_h( 'Willkommen im Bernstein Motel in Marchegg!', 1 ),
@@ -43,7 +43,7 @@ function bms_pages( array $media ): array {
 			array(
 				bms_columns(
 					array(
-						array( bms_image( $media['rundgang-motel-bernstein-marchegg-eingangsbereich.jpg'], 'bm-photo' ) ),
+						array( bms_image( $media['rundgang-bernsteinmotelmarchegg.jpg'], 'bm-photo' ) ),
 						array(
 							bms_p( 'Über das Motel', 'bm-eyebrow' ),
 							bms_h( 'Persönlich geführt, ehrlich kalkuliert' ),

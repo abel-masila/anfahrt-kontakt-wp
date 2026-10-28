@@ -38,7 +38,7 @@ add_action(
 	'wp_head',
 	function () {
 		$uri = get_template_directory_uri() . '/assets/fonts/';
-		foreach ( array( 'damion-latin-400.woff2', 'barlow-condensed-latin-600.woff2', 'inter-latin-variable.woff2' ) as $font ) {
+		foreach ( array( 'lobster-latin-400.woff2', 'barlow-condensed-latin-600.woff2', 'inter-latin-variable.woff2' ) as $font ) {
 			printf( '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n", esc_url( $uri . $font ) );
 		}
 	},

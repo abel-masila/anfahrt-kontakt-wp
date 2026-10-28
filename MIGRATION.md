@@ -67,4 +67,4 @@ Interne Links in den Seiten-Inhalten sind relativ gespeichert (`/zimmer/`) und w
 
 - **Anfragen** (wp-admin → Anfragen) enthalten personenbezogene Daten. Beim Umzug werden sie mitkopiert; alte Anfragen regelmäßig löschen und die Datenschutzerklärung entsprechend ergänzen.
 - Das Theme braucht das Plugin „Bernstein Core“ – ohne Plugin fehlen Kopf-, Fußbereich und alle Inhalts-Blöcke.
-- Schriften (Damion, Barlow Condensed, Inter) liegen im Theme; es werden keine Google-Server kontaktiert.
+- Schriften (Lobster, Barlow Condensed, Inter) liegen im Theme; es werden keine Google-Server kontaktiert.
