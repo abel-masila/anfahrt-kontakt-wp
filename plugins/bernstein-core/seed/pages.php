@@ -20,11 +20,11 @@ function bms_pages( array $media ): array {
 			$media['rundgang-bernsteinmotelmarchegg.jpg'],
 			array(
 				bms_p( 'Familiengeführt · Marchegg im Marchfeld', 'bm-eyebrow' ),
-				bms_h( 'Willkommen im Bernstein-Motel in Marchegg!', 1 ),
+				bms_h( 'Willkommen im Bernstein Motel in Marchegg!', 1 ),
 				bms_p( 'Modern, sauber und fair – Ihr ideales Sprungbrett in einen erlebnisreichen Tag zwischen Storchenstadt, Marchfeldschlössern und den Metropolen Wien und Bratislava.', 'bm-lead' ),
 				bms_buttons(
 					array(
-						array( 'Zimmer anfragen', '#reservieren', 'amber' ),
+						array( 'Zimmer anfragen', '#reservieren', 'red' ),
 						array( 'Zimmer ansehen', '/zimmer/', 'ghost' ),
 					),
 					'bm-actions'
@@ -56,7 +56,7 @@ function bms_pages( array $media ): array {
 					true
 				),
 			),
-			'bm-bg-white'
+			'bm-bg-alt'
 		),
 		bms_section(
 			array(
@@ -70,7 +70,7 @@ function bms_pages( array $media ): array {
 				bms_heading( 'Die Lage', 'Mitten im Marchfeld – nah an zwei Hauptstädten', '', 2, 'bm-heading--left' ),
 				bms_block( 'location-highlights' ),
 			),
-			'bm-bg-forest'
+			'bm-bg-navy'
 		),
 		bms_section(
 			array(
@@ -85,7 +85,7 @@ function bms_pages( array $media ): array {
 				bms_block( 'gallery', array( 'preview' => true, 'limit' => 8 ) ),
 				bms_more( 'Zur ganzen Galerie', '/galerie/' ),
 			),
-			'bm-bg-white'
+			'bm-bg-alt'
 		),
 		bms_section(
 			array(

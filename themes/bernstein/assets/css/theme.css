@@ -1,21 +1,27 @@
 /* Bernstein – Grundgerüst, Typografie und Stile der Kern-Blöcke. */
 
 :root {
-	--bm-cream: var(--wp--preset--color--cream);
-	--bm-cream-dark: var(--wp--preset--color--cream-dark);
-	--bm-sand: var(--wp--preset--color--sand);
-	--bm-forest: var(--wp--preset--color--forest);
-	--bm-forest-dark: var(--wp--preset--color--forest-dark);
-	--bm-forest-light: var(--wp--preset--color--forest-light);
-	--bm-amber: var(--wp--preset--color--amber);
-	--bm-amber-dark: var(--wp--preset--color--amber-dark);
-	--bm-amber-light: var(--wp--preset--color--amber-light);
+	/* Markenfarben – Rot exakt aus dem BM-Logo, Nachtblau für dunkle Flächen. */
+	--bm-accent: var(--wp--preset--color--red);
+	--bm-accent-hover: var(--wp--preset--color--red-dark);
+	--bm-accent-on-dark: var(--wp--preset--color--red-light);
+	--bm-dark: var(--wp--preset--color--navy);
+	--bm-dark-deep: var(--wp--preset--color--navy-dark);
+	--bm-dark-card: var(--wp--preset--color--navy-light);
+	--bm-surface: var(--wp--preset--color--paper);
+	--bm-surface-alt: var(--wp--preset--color--paper-alt);
+	--bm-line: var(--wp--preset--color--line);
 	--bm-ink: var(--wp--preset--color--ink);
 	--bm-body: var(--wp--preset--color--body);
 	--bm-muted: var(--wp--preset--color--muted);
-	--bm-serif: var(--wp--preset--font-family--serif);
-	--bm-shadow: 0 1px 2px rgb(38 48 42 / 0.06), 0 8px 24px -8px rgb(38 48 42 / 0.12);
-	--bm-shadow-hover: 0 2px 4px rgb(38 48 42 / 0.08), 0 16px 32px -8px rgb(38 48 42 / 0.18);
+	--bm-on-dark: #f1f1ee;
+	--bm-on-dark-muted: #a9b0c0;
+	/* Schriften: Damion (wie die Schrift an der Fassade) nur für große Titel,
+	   Barlow Condensed (wie im Logo) für Navigation, Etiketten, Preise, Buttons. */
+	--bm-font-script: var(--wp--preset--font-family--script);
+	--bm-font-display: var(--wp--preset--font-family--display);
+	--bm-shadow: 0 1px 2px rgb(27 31 42 / 0.06), 0 8px 24px -8px rgb(27 31 42 / 0.14);
+	--bm-shadow-hover: 0 2px 4px rgb(27 31 42 / 0.08), 0 16px 32px -8px rgb(27 31 42 / 0.2);
 	--bm-gutter: 1rem;
 	--bm-max: 72rem;
 }
@@ -31,10 +37,10 @@ body {
 	overflow-x: clip;
 }
 
-::selection { background: var(--bm-amber-light); color: var(--bm-forest-dark); }
+::selection { background: var(--bm-accent-on-dark); color: var(--bm-dark-deep); }
 
 :focus-visible {
-	outline: 2px solid var(--bm-amber);
+	outline: 2px solid var(--bm-accent);
 	outline-offset: 2px;
 	border-radius: 2px;
 }
@@ -74,40 +80,49 @@ img { max-width: 100%; height: auto; }
 }
 .bm-section--narrow > * { max-width: 48rem; }
 
-.bm-bg-white { background: #fff; }
-.bm-bg-forest { background: var(--bm-forest); color: #fff; }
-.bm-bg-cream-dark { background: var(--bm-cream-dark); }
+.bm-bg-white { background: var(--bm-surface); }
+.bm-bg-alt { background: var(--bm-surface-alt); }
+.bm-bg-navy { background: var(--bm-dark); color: var(--bm-on-dark); }
 
 /* Überschriften-Gruppe */
 .bm-section > .bm-heading {
-	max-width: 42rem;
+	max-width: 44rem;
 	text-align: center;
 }
 .bm-section > .bm-heading.bm-heading--left {
 	max-width: var(--bm-max);
 	text-align: left;
 }
-.bm-heading > .bm-heading--left > * { max-width: 42rem; }
 
+/* Dachzeile: Barlow Condensed in Versalien – wie „BERNSTEIN-MOTEL MARCHEGG“ im Logo. */
 .bm-eyebrow {
 	margin: 0;
-	font-size: 0.75rem;
+	font-family: var(--bm-font-display);
+	font-size: 0.9375rem;
 	font-weight: 600;
-	letter-spacing: 0.22em;
+	letter-spacing: 0.14em;
+	line-height: 1.3;
 	text-transform: uppercase;
-	color: var(--bm-amber-dark);
+	color: var(--bm-accent);
 }
+
+/* Titel in Schreibschrift – wie der rote Schriftzug an der Fassade. */
 .bm-heading h1,
 .bm-heading h2,
-.bm-split h2 {
-	margin: 0.75rem 0 0;
-	font-size: 1.875rem;
-	line-height: 1.2;
+.bm-split h2,
+.bm-cta h2 {
+	margin: 0.5rem 0 0;
+	font-family: var(--bm-font-script);
+	font-size: 2.625rem;
+	font-weight: 400;
+	line-height: 1.12;
+	letter-spacing: 0.005em;
+	color: var(--bm-accent);
 }
 @media (min-width: 640px) {
 	.bm-heading h1,
 	.bm-heading h2,
-	.bm-split h2 { font-size: 2.25rem; }
+	.bm-split h2 { font-size: 3.25rem; }
 }
 .bm-intro {
 	margin: 1rem 0 0 !important;
@@ -117,9 +132,9 @@ img { max-width: 100%; height: auto; }
 .bm-heading + * { margin-top: 3rem !important; }
 .bm-section--narrow .bm-heading + * { margin-top: 2.5rem !important; }
 
-.bm-bg-forest .bm-eyebrow { color: var(--bm-amber-light); }
-.bm-bg-forest h2 { color: #fff; }
-.bm-bg-forest .bm-heading--left h2 { max-width: 42rem; }
+.bm-bg-navy .bm-eyebrow { color: var(--bm-accent-on-dark); }
+.bm-bg-navy h2 { color: var(--bm-accent-on-dark); }
+.bm-bg-navy .bm-heading--left h2 { max-width: 44rem; }
 
 /* Weiter-Link mit Pfeil */
 .bm-more {
@@ -130,10 +145,14 @@ img { max-width: 100%; height: auto; }
 	display: inline-flex;
 	align-items: center;
 	gap: 0.5rem;
+	font-family: var(--bm-font-display);
+	font-size: 1.0625rem;
 	font-weight: 600;
-	color: var(--bm-forest);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--bm-ink);
 	text-decoration: underline;
-	text-decoration-color: var(--bm-amber);
+	text-decoration-color: var(--bm-accent);
 	text-decoration-thickness: 2px;
 	text-underline-offset: 8px;
 }
@@ -141,13 +160,15 @@ img { max-width: 100%; height: auto; }
 	content: "";
 	width: 1rem;
 	height: 1rem;
-	background: currentColor;
+	background: var(--bm-accent);
 	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E") center / contain no-repeat;
 	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E") center / contain no-repeat;
 }
-.bm-more a:hover { color: var(--bm-forest-light); }
+.bm-more a:hover { color: var(--bm-accent); }
 
-/* ---------- Titelbild ---------- */
+/* ---------- Titelbild ----------
+   Der Verlauf dunkelt nur die Textseite ab, damit der echte rote Schriftzug
+   an der Fassade rechts sichtbar bleibt. */
 
 .wp-block-cover.bm-hero {
 	min-height: 80vh !important;
@@ -155,6 +176,17 @@ img { max-width: 100%; height: auto; }
 	padding: 0;
 	align-items: center;
 	justify-content: flex-start;
+	border-bottom: 4px solid var(--bm-accent);
+}
+.bm-hero .wp-block-cover__image-background { object-position: 72% 40%; }
+.bm-hero .wp-block-cover__background {
+	opacity: 1 !important;
+	background: linear-gradient(180deg, rgb(18 24 38 / 0.55) 0%, rgb(18 24 38 / 0.8) 55%, rgb(18 24 38 / 0.9) 100%) !important;
+}
+@media (min-width: 900px) {
+	.bm-hero .wp-block-cover__background {
+		background: linear-gradient(90deg, rgb(18 24 38 / 0.9) 0%, rgb(18 24 38 / 0.72) 38%, rgb(18 24 38 / 0.15) 68%, rgb(18 24 38 / 0) 85%) !important;
+	}
 }
 .bm-hero .wp-block-cover__inner-container {
 	width: 100%;
@@ -163,20 +195,23 @@ img { max-width: 100%; height: auto; }
 	padding: 6rem var(--bm-gutter);
 	color: #fff;
 }
-.bm-hero .wp-block-cover__inner-container > * { max-width: 42rem; margin-left: 0 !important; }
-.bm-hero .bm-eyebrow { color: var(--bm-amber-light); letter-spacing: 0.25em; }
+.bm-hero .wp-block-cover__inner-container > * { max-width: 40rem; margin-left: 0 !important; }
+.bm-hero .bm-eyebrow { color: #fff; letter-spacing: 0.18em; }
 .bm-hero h1 {
-	margin-top: 1rem;
-	font-size: 2.25rem;
-	line-height: 1.15;
+	margin-top: 0.75rem;
+	font-family: var(--bm-font-script);
+	font-size: 3.25rem;
+	font-weight: 400;
+	line-height: 1.05;
 	color: #fff;
+	text-shadow: 0 2px 0 var(--bm-accent), 0 6px 24px rgb(0 0 0 / 0.35);
 }
-@media (min-width: 640px) { .bm-hero h1 { font-size: 3rem; } }
-@media (min-width: 1024px) { .bm-hero h1 { font-size: 3.75rem; } }
+@media (min-width: 640px) { .bm-hero h1 { font-size: 4.25rem; } }
+@media (min-width: 1024px) { .bm-hero h1 { font-size: 5rem; } }
 .bm-hero .bm-lead {
-	max-width: 36rem;
+	max-width: 34rem;
 	margin-top: 1.25rem;
-	color: rgb(250 247 240 / 0.9);
+	color: rgb(241 241 238 / 0.92);
 	line-height: 1.65;
 }
 @media (min-width: 640px) { .bm-hero .bm-lead { font-size: 1.125rem; } }
@@ -197,26 +232,23 @@ img { max-width: 100%; height: auto; }
 
 /* ---------- Button-Stile ---------- */
 
-.wp-block-button__link { transition: background-color 0.15s, color 0.15s; }
-.wp-block-button.is-style-amber .wp-block-button__link {
-	background: var(--bm-amber);
-	color: var(--bm-forest-dark);
-}
-.wp-block-button.is-style-amber .wp-block-button__link:hover { background: var(--bm-amber-light); color: var(--bm-forest-dark); }
+.wp-block-button__link { transition: background-color 0.15s, color 0.15s, border-color 0.15s; }
+.wp-block-button.is-style-red .wp-block-button__link { background: var(--bm-accent); color: #fff; }
+.wp-block-button.is-style-red .wp-block-button__link:hover { background: var(--bm-accent-hover); }
 .wp-block-button.is-style-ghost .wp-block-button__link {
 	background: transparent;
 	color: #fff;
-	border: 1px solid rgb(255 255 255 / 0.4);
-	padding: calc(1rem - 1px) calc(1.75rem - 1px);
+	border: 2px solid rgb(255 255 255 / 0.7);
+	padding: calc(0.875rem - 2px) calc(1.75rem - 2px);
 }
-.wp-block-button.is-style-ghost .wp-block-button__link:hover { background: rgb(255 255 255 / 0.1); }
-.wp-block-button.is-style-outline-forest .wp-block-button__link {
+.wp-block-button.is-style-ghost .wp-block-button__link:hover { background: #fff; color: var(--bm-ink); }
+.wp-block-button.is-style-outline-red .wp-block-button__link {
 	background: transparent;
-	color: var(--bm-forest);
-	border: 1px solid var(--bm-forest);
-	padding: calc(1rem - 1px) calc(1.75rem - 1px);
+	color: var(--bm-accent);
+	border: 2px solid var(--bm-accent);
+	padding: calc(0.875rem - 2px) calc(1.75rem - 2px);
 }
-.wp-block-button.is-style-outline-forest .wp-block-button__link:hover { background: var(--bm-cream-dark); }
+.wp-block-button.is-style-outline-red .wp-block-button__link:hover { background: var(--bm-accent); color: #fff; }
 
 /* ---------- Zwei-Spalten-Abschnitte ---------- */
 
@@ -231,7 +263,7 @@ img { max-width: 100%; height: auto; }
 .wp-block-columns.bm-split--top { align-items: flex-start; }
 .bm-split--even > .wp-block-column > * + * { margin-top: 1.5rem; }
 .bm-split .wp-block-column > p { color: var(--bm-body); line-height: 1.65; }
-.bm-split .wp-block-column > .bm-eyebrow { color: var(--bm-amber-dark); }
+.bm-split .wp-block-column > .bm-eyebrow { color: var(--bm-accent); }
 .bm-split .wp-block-column > h2 + p { margin-top: 1.25rem; }
 
 .wp-block-image.bm-photo { margin: 0; }
@@ -247,26 +279,28 @@ img { max-width: 100%; height: auto; }
 .wp-block-quote.bm-quote {
 	margin: 1.5rem 0 0;
 	padding: 0 0 0 1.25rem;
-	border-left: 2px solid var(--bm-amber);
+	border-left: 2px solid var(--bm-accent);
 	font-style: italic;
 	font-size: 0.9375rem;
 	color: var(--bm-body);
 }
 .wp-block-quote.bm-quote cite {
 	display: block;
-	margin-top: 0.5rem;
-	font-size: 0.875rem;
+	margin-top: 0.75rem;
+	font-family: var(--bm-font-script);
+	font-size: 1.875rem;
 	font-style: normal;
-	font-weight: 600;
-	color: var(--bm-forest);
+	font-weight: 400;
+	line-height: 1.1;
+	color: var(--bm-accent);
 }
 
 /* ---------- Textseiten (Impressum, Datenschutz, AGB) ---------- */
 
 .bm-prose > * { max-width: 48rem; }
-.bm-prose h1 { margin: 0 0 2rem; font-size: 1.875rem; }
-@media (min-width: 640px) { .bm-prose h1 { font-size: 2.25rem; } }
-.bm-prose h2 { margin: 2rem 0 0.5rem !important; font-size: 1.25rem; }
+.bm-prose h1 { margin: 0 0 2rem; font-size: 2.75rem; }
+@media (min-width: 640px) { .bm-prose h1 { font-size: 3.25rem; } }
+.bm-prose h2 { margin: 2rem 0 0.5rem !important; font-family: var(--bm-font-display); font-size: 1.375rem; font-weight: 600; line-height: 1.25; color: var(--bm-ink); }
 .bm-prose h2 + p { margin-top: 0 !important; }
 .bm-prose p { color: var(--bm-body); font-size: 0.9375rem; line-height: 1.7; }
 .bm-prose a { text-underline-offset: 2px; }
@@ -274,7 +308,7 @@ img { max-width: 100%; height: auto; }
 	margin-top: 2rem !important;
 	padding: 1rem;
 	border-radius: 0.5rem;
-	background: var(--bm-cream-dark);
+	background: var(--bm-surface-alt);
 	color: var(--bm-muted) !important;
 	font-size: 0.875rem !important;
 }
@@ -287,7 +321,7 @@ img { max-width: 100%; height: auto; }
 	padding: 7rem var(--bm-gutter);
 	text-align: center;
 }
-.bm-notfound h1 { margin-top: 1rem; font-size: 2.25rem; }
+.bm-notfound h1 { margin-top: 0.75rem; font-size: 3rem; }
 .bm-notfound .bm-intro { max-width: 28rem; margin-inline: auto !important; }
 .bm-notfound .wp-block-buttons { margin-top: 2rem; }
 

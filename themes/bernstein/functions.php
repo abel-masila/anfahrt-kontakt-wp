@@ -38,7 +38,7 @@ add_action(
 	'wp_head',
 	function () {
 		$uri = get_template_directory_uri() . '/assets/fonts/';
-		foreach ( array( 'fraunces-latin-variable.woff2', 'inter-latin-variable.woff2' ) as $font ) {
+		foreach ( array( 'damion-latin-400.woff2', 'barlow-condensed-latin-600.woff2', 'inter-latin-variable.woff2' ) as $font ) {
 			printf( '<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n", esc_url( $uri . $font ) );
 		}
 	},
@@ -49,8 +49,8 @@ add_action(
 add_action(
 	'init',
 	function () {
-		register_block_style( 'core/button', array( 'name' => 'amber', 'label' => 'Bernstein' ) );
+		register_block_style( 'core/button', array( 'name' => 'red', 'label' => 'Rot' ) );
 		register_block_style( 'core/button', array( 'name' => 'ghost', 'label' => 'Hell (auf Foto)' ) );
-		register_block_style( 'core/button', array( 'name' => 'outline-forest', 'label' => 'Umrandet' ) );
+		register_block_style( 'core/button', array( 'name' => 'outline-red', 'label' => 'Rot umrandet' ) );
 	}
 );

@@ -11,19 +11,71 @@
 			"defaultGradients": false,
 			"defaultDuotone": false,
 			"palette": [
-				{ "slug": "cream", "name": "Elfenbein", "color": "#faf7f0" },
-				{ "slug": "cream-dark", "name": "Elfenbein dunkel", "color": "#f2ecdf" },
-				{ "slug": "sand", "name": "Sand", "color": "#e9e0cd" },
-				{ "slug": "forest", "name": "Waldgrün", "color": "#1e3a2d" },
-				{ "slug": "forest-dark", "name": "Waldgrün dunkel", "color": "#142a20" },
-				{ "slug": "forest-light", "name": "Waldgrün hell", "color": "#2c5442" },
-				{ "slug": "amber", "name": "Bernstein", "color": "#b8862b" },
-				{ "slug": "amber-dark", "name": "Bernstein dunkel", "color": "#96691c" },
-				{ "slug": "amber-light", "name": "Bernstein hell", "color": "#e7d3a4" },
-				{ "slug": "ink", "name": "Tinte", "color": "#26302a" },
-				{ "slug": "body", "name": "Fließtext", "color": "#4b564e" },
-				{ "slug": "muted", "name": "Gedämpft", "color": "#75806f" },
-				{ "slug": "white", "name": "Weiß", "color": "#ffffff" }
+				{
+					"slug": "red",
+					"name": "Motel-Rot (Logo)",
+					"color": "#c82027"
+				},
+				{
+					"slug": "red-dark",
+					"name": "Rot dunkel",
+					"color": "#a1171d"
+				},
+				{
+					"slug": "red-light",
+					"name": "Rot hell (auf Dunkel)",
+					"color": "#ef6b6f"
+				},
+				{
+					"slug": "navy",
+					"name": "Nachtblau",
+					"color": "#1a2231"
+				},
+				{
+					"slug": "navy-dark",
+					"name": "Nachtblau dunkel",
+					"color": "#121826"
+				},
+				{
+					"slug": "navy-light",
+					"name": "Nachtblau hell",
+					"color": "#243049"
+				},
+				{
+					"slug": "paper",
+					"name": "Weiß",
+					"color": "#ffffff"
+				},
+				{
+					"slug": "paper-alt",
+					"name": "Hellgrau warm",
+					"color": "#f6f4f1"
+				},
+				{
+					"slug": "line",
+					"name": "Linie",
+					"color": "#e7e3dd"
+				},
+				{
+					"slug": "ink",
+					"name": "Tinte",
+					"color": "#1b1f2a"
+				},
+				{
+					"slug": "body",
+					"name": "Fließtext",
+					"color": "#454b59"
+				},
+				{
+					"slug": "muted",
+					"name": "Gedämpft",
+					"color": "#6b7280"
+				},
+				{
+					"slug": "white",
+					"name": "Reinweiß",
+					"color": "#ffffff"
+				}
 			]
 		},
 		"layout": {
@@ -31,7 +83,13 @@
 			"wideSize": "72rem"
 		},
 		"spacing": {
-			"units": ["px", "rem", "%", "vh", "vw"]
+			"units": [
+				"px",
+				"rem",
+				"%",
+				"vh",
+				"vw"
+			]
 		},
 		"typography": {
 			"customFontSize": false,
@@ -40,16 +98,52 @@
 			"fluid": false,
 			"fontFamilies": [
 				{
-					"slug": "serif",
-					"name": "Fraunces",
-					"fontFamily": "Fraunces, Georgia, 'Times New Roman', serif",
+					"slug": "script",
+					"name": "Damion (Schrift wie an der Fassade)",
+					"fontFamily": "Damion, 'Brush Script MT', cursive",
 					"fontFace": [
 						{
-							"fontFamily": "Fraunces",
+							"fontFamily": "Damion",
 							"fontStyle": "normal",
-							"fontWeight": "100 900",
+							"fontWeight": "400",
 							"fontDisplay": "swap",
-							"src": ["file:./assets/fonts/fraunces-latin-variable.woff2"]
+							"src": [
+								"file:./assets/fonts/damion-latin-400.woff2"
+							]
+						}
+					]
+				},
+				{
+					"slug": "display",
+					"name": "Barlow Condensed",
+					"fontFamily": "'Barlow Condensed', 'Arial Narrow', sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Barlow Condensed",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"fontDisplay": "swap",
+							"src": [
+								"file:./assets/fonts/barlow-condensed-latin-500.woff2"
+							]
+						},
+						{
+							"fontFamily": "Barlow Condensed",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"fontDisplay": "swap",
+							"src": [
+								"file:./assets/fonts/barlow-condensed-latin-600.woff2"
+							]
+						},
+						{
+							"fontFamily": "Barlow Condensed",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"fontDisplay": "swap",
+							"src": [
+								"file:./assets/fonts/barlow-condensed-latin-700.woff2"
+							]
 						}
 					]
 				},
@@ -63,27 +157,50 @@
 							"fontStyle": "normal",
 							"fontWeight": "100 900",
 							"fontDisplay": "swap",
-							"src": ["file:./assets/fonts/inter-latin-variable.woff2"]
+							"src": [
+								"file:./assets/fonts/inter-latin-variable.woff2"
+							]
 						}
 					]
 				}
 			],
 			"fontSizes": [
-				{ "slug": "small", "name": "Klein", "size": "0.875rem" },
-				{ "slug": "medium", "name": "Normal", "size": "1rem" },
-				{ "slug": "large", "name": "Groß", "size": "1.125rem" },
-				{ "slug": "x-large", "name": "Sehr groß", "size": "1.5rem" }
+				{
+					"slug": "small",
+					"name": "Klein",
+					"size": "0.875rem"
+				},
+				{
+					"slug": "medium",
+					"name": "Normal",
+					"size": "1rem"
+				},
+				{
+					"slug": "large",
+					"name": "Groß",
+					"size": "1.125rem"
+				},
+				{
+					"slug": "x-large",
+					"name": "Sehr groß",
+					"size": "1.5rem"
+				}
 			]
 		}
 	},
 	"styles": {
 		"color": {
-			"background": "var(--wp--preset--color--cream)",
+			"background": "var(--wp--preset--color--paper)",
 			"text": "var(--wp--preset--color--ink)"
 		},
 		"spacing": {
 			"blockGap": "1rem",
-			"padding": { "top": "0", "right": "0", "bottom": "0", "left": "0" }
+			"padding": {
+				"top": "0",
+				"right": "0",
+				"bottom": "0",
+				"left": "0"
+			}
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--sans)",
@@ -92,36 +209,89 @@
 		},
 		"elements": {
 			"heading": {
-				"color": { "text": "var(--wp--preset--color--forest)" },
+				"color": {
+					"text": "var(--wp--preset--color--ink)"
+				},
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--serif)",
+					"fontFamily": "var(--wp--preset--font-family--display)",
 					"fontWeight": "600",
 					"lineHeight": "1.2"
 				}
 			},
 			"link": {
-				"color": { "text": "var(--wp--preset--color--forest)" }
+				"color": {
+					"text": "var(--wp--preset--color--red)"
+				},
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--red-dark)"
+					}
+				}
 			},
 			"button": {
 				"color": {
-					"background": "var(--wp--preset--color--forest)",
+					"background": "var(--wp--preset--color--red)",
 					"text": "var(--wp--preset--color--white)"
 				},
-				"border": { "radius": "6px" },
-				"spacing": { "padding": { "top": "1rem", "bottom": "1rem", "left": "1.75rem", "right": "1.75rem" } },
-				"typography": { "fontSize": "1rem", "fontWeight": "600", "lineHeight": "1.5" },
+				"border": {
+					"radius": "6px"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0.875rem",
+						"bottom": "0.875rem",
+						"left": "1.75rem",
+						"right": "1.75rem"
+					}
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--display)",
+					"fontSize": "1.125rem",
+					"fontWeight": "600",
+					"letterSpacing": "0.04em",
+					"lineHeight": "1.4",
+					"textTransform": "uppercase"
+				},
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--forest-light)",
+						"background": "var(--wp--preset--color--red-dark)",
 						"text": "var(--wp--preset--color--white)"
 					}
+				}
+			},
+			"h1": {
+				"color": {
+					"text": "var(--wp--preset--color--red)"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--script)",
+					"fontWeight": "400",
+					"lineHeight": "1.1"
+				}
+			},
+			"h2": {
+				"color": {
+					"text": "var(--wp--preset--color--red)"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--script)",
+					"fontWeight": "400",
+					"lineHeight": "1.1"
 				}
 			}
 		}
 	},
 	"templateParts": [
-		{ "name": "header", "title": "Kopfbereich", "area": "header" },
-		{ "name": "footer", "title": "Fußbereich", "area": "footer" }
+		{
+			"name": "header",
+			"title": "Kopfbereich",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"title": "Fußbereich",
+			"area": "footer"
+		}
 	],
 	"customTemplates": []
 }

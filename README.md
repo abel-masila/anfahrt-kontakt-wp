@@ -12,6 +12,14 @@ https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.co
 - Kein E-Mail-Versand aus Playground.
 - wp-admin: `/wp-admin/` (bereits angemeldet als `admin`).
 
+## Design
+
+- **Rot #C82027** – exakt aus dem BM-Logo gemessen; für Titel, Buttons und Akzente. Dunkle Flächen in Nachtblau, Hintergrund weiß wie die Fassade.
+- **Damion** (Schreibschrift) – der Schrift an der Fassade am ähnlichsten; nur für große Titel und die Unterschrift.
+- **Barlow Condensed** – wie „BERNSTEIN-MOTEL MARCHEGG“ im Logo; für Navigation, Dachzeilen, Preise, Buttons.
+- **Inter** – Fließtext.
+- Das echte BM-Logo (`plugins/bernstein-core/assets/logo-bm.png`, 190 px) steht im Kopf- und Fußbereich und dient als Favicon. Für den Launch eine Vektor-Version (SVG/PDF) beim Motel anfragen.
+
 ## Aufbau
 
 | Ordner | Inhalt |

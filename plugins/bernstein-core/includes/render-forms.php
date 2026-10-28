@@ -146,7 +146,7 @@ function bm_render_booking_demo(): string {
 	<div <?php echo get_block_wrapper_attributes( array( 'class' => 'bm-booking' ) ); // phpcs:ignore ?> data-bm-booking data-config="<?php echo esc_attr( wp_json_encode( $config ) ); ?>">
 		<div class="bm-booking__main">
 			<div class="bm-panel bm-booking__box">
-				<h2><?php echo bm_icon( 'calendar-days', 'bm-icon bm-icon--amber' ); // phpcs:ignore ?>Reisedaten</h2>
+				<h2><?php echo bm_icon( 'calendar-days', 'bm-icon bm-icon--accent' ); // phpcs:ignore ?>Reisedaten</h2>
 				<div class="bm-booking__dates">
 					<div class="bm-field"><label for="bd-arrival">Anreise</label><input id="bd-arrival" type="date"></div>
 					<div class="bm-field"><label for="bd-departure">Abreise</label><input id="bd-departure" type="date"></div>
@@ -157,7 +157,7 @@ function bm_render_booking_demo(): string {
 			</div>
 			<fieldset class="bm-panel bm-booking__box">
 				<legend class="screen-reader-text">Zimmerkategorie wählen</legend>
-				<h2><?php echo bm_icon( 'users', 'bm-icon bm-icon--amber' ); // phpcs:ignore ?>Zimmer wählen</h2>
+				<h2><?php echo bm_icon( 'users', 'bm-icon bm-icon--accent' ); // phpcs:ignore ?>Zimmer wählen</h2>
 				<div class="bm-booking__rooms"><?php echo $room_list; // phpcs:ignore ?></div>
 			</fieldset>
 		</div>

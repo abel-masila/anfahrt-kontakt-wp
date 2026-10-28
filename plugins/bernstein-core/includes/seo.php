@@ -49,7 +49,8 @@ add_action(
 
 		// Favicon nur, wenn kein Website-Icon in WordPress gesetzt ist.
 		if ( ! has_site_icon() ) {
-			printf( '<link rel="icon" type="image/svg+xml" href="%s">' . "\n", esc_url( BM_URL . 'assets/icon.svg' ) );
+			printf( '<link rel="icon" type="image/png" href="%s">' . "\n", esc_url( BM_URL . 'assets/logo-bm.png' ) );
+			printf( '<link rel="apple-touch-icon" href="%s">' . "\n", esc_url( BM_URL . 'assets/logo-bm.png' ) );
 		}
 	},
 	2

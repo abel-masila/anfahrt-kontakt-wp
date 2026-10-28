@@ -55,7 +55,7 @@ function bms_block( string $name, array $attrs = array() ): string {
 	return '<!-- wp:bernstein/' . $name . bms_attrs( $attrs ) . ' /-->';
 }
 
-/** Buttons: [ [Text, URL, Stil], … ] – Stil z. B. 'amber', 'ghost', 'outline-forest' oder ''. */
+/** Buttons: [ [Text, URL, Stil], … ] – Stil z. B. 'red', 'ghost', 'outline' oder ''. */
 function bms_buttons( array $buttons, string $class = '' ): string {
 	$items = array();
 	foreach ( $buttons as [ $text, $url, $style ] ) {
@@ -108,7 +108,7 @@ function bms_hero( int $image_id, array $inner ): string {
 		'url'                => (string) wp_get_attachment_url( $image_id ),
 		'id'                 => $image_id,
 		'dimRatio'           => 70,
-		'overlayColor'       => 'forest-dark',
+		'overlayColor'       => 'navy-dark',
 		'isUserOverlayColor' => true,
 		'minHeight'          => 80,
 		'minHeightUnit'      => 'vh',
@@ -117,6 +117,6 @@ function bms_hero( int $image_id, array $inner ): string {
 	return "<!-- wp:cover" . bms_attrs( $attrs ) . " -->\n"
 		. "<div class=\"wp-block-cover bm-hero\" style=\"min-height:80vh\">"
 		. "<img class=\"wp-block-cover__image-background wp-image-{$image_id}\" alt=\"\" src=\"{$src}\" data-object-fit=\"cover\"/>"
-		. "<span aria-hidden=\"true\" class=\"wp-block-cover__background has-forest-dark-background-color has-background-dim-70 has-background-dim\"></span>"
+		. "<span aria-hidden=\"true\" class=\"wp-block-cover__background has-navy-dark-background-color has-background-dim-70 has-background-dim\"></span>"
 		. "<div class=\"wp-block-cover__inner-container\">" . implode( "\n\n", $inner ) . "</div></div>\n<!-- /wp:cover -->";
 }

@@ -67,11 +67,14 @@ function bm_is_current( string $url ): bool {
 	return '' !== $item_path && ( $current_path === $item_path || str_starts_with( $current_path, $item_path . '/' ) );
 }
 
-/** „Bernstein-Motel Marchegg“ → [„Bernstein-Motel“, „Marchegg“]. */
+/**
+ * „Bernstein-Motel Marchegg“ → [„Bernstein Motel“, „Marchegg“].
+ * Der Schriftzug wird wie an der Fassade ohne Bindestrich geschrieben.
+ */
 function bm_logo_parts(): array {
 	$words = explode( ' ', trim( bm_setting( 'name' ) ) );
 	$last  = count( $words ) > 1 ? array_pop( $words ) : '';
-	return array( implode( ' ', $words ), $last );
+	return array( str_replace( '-', ' ', implode( ' ', $words ) ), $last );
 }
 
 function bm_render_header(): string {
@@ -84,10 +87,13 @@ function bm_render_header(): string {
 	<header <?php echo get_block_wrapper_attributes( array( 'class' => 'bm-header' ) ); // phpcs:ignore ?> data-bm-header>
 		<div class="bm-header__bar">
 			<a class="bm-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr( bm_setting( 'name' ) . ' – zur Startseite' ); ?>">
-				<span class="bm-logo__main"><?php echo esc_html( $logo_main ); ?></span>
-				<?php if ( $logo_sub ) : ?>
-					<span class="bm-logo__sub"><?php echo esc_html( $logo_sub ); ?></span>
-				<?php endif; ?>
+				<img class="bm-logo__mark" src="<?php echo esc_url( BM_URL . 'assets/logo-bm.png' ); ?>" width="52" height="52" alt="">
+				<span class="bm-logo__text">
+					<span class="bm-logo__main"><?php echo esc_html( $logo_main ); ?></span>
+					<?php if ( $logo_sub ) : ?>
+						<span class="bm-logo__sub"><?php echo esc_html( $logo_sub ); ?></span>
+					<?php endif; ?>
+				</span>
 			</a>
 
 			<nav class="bm-nav" aria-label="Hauptnavigation">
@@ -131,8 +137,13 @@ function bm_render_footer(): string {
 	<footer <?php echo get_block_wrapper_attributes( array( 'class' => 'bm-footer' ) ); // phpcs:ignore ?>>
 		<div class="bm-footer__grid">
 			<div>
-				<p class="bm-logo__main bm-logo__main--light"><?php echo esc_html( $logo_main ); ?></p>
-				<p class="bm-logo__sub bm-logo__sub--light"><?php echo esc_html( $logo_sub ); ?></p>
+				<div class="bm-footer__logo">
+					<img src="<?php echo esc_url( BM_URL . 'assets/logo-bm.png' ); ?>" width="56" height="56" alt="">
+					<div>
+						<p class="bm-logo__main bm-logo__main--light"><?php echo esc_html( $logo_main ); ?></p>
+						<p class="bm-logo__sub bm-logo__sub--light"><?php echo esc_html( $logo_sub ); ?></p>
+					</div>
+				</div>
 				<p class="bm-footer__text">Familiengeführtes Motel im Herzen des Marchfelds – modern, sauber und fair. Zwischen Wien und Bratislava.</p>
 			</div>
 			<div>
@@ -218,7 +229,7 @@ function bm_render_cta_banner(): string {
 			<h2 id="bm-cta-title">Reservieren Sie gleich Ihr Zimmer!</h2>
 			<p>Senden Sie uns eine unverbindliche Anfrage – wir prüfen die Verfügbarkeit und melden uns rasch mit einer Bestätigung.</p>
 			<div class="bm-cta__actions">
-				<a class="bm-btn bm-btn--amber" href="<?php echo esc_url( bm_reservation_url() ); ?>">Zimmer anfragen</a>
+				<a class="bm-btn bm-btn--accent" href="<?php echo esc_url( bm_reservation_url() ); ?>">Zimmer anfragen</a>
 				<a class="bm-btn bm-btn--ghost" href="<?php echo esc_attr( bm_tel_href( bm_setting( 'phone' ) ) ); ?>"><?php echo bm_icon( 'phone', 'bm-icon bm-icon--sm' ); // phpcs:ignore ?><?php echo esc_html( bm_setting( 'phone_display' ) ); ?></a>
 			</div>
 		</div>
@@ -268,7 +279,7 @@ function bm_render_directions(): string {
 	);
 	$list = '';
 	foreach ( $items as [ $icon, $text ] ) {
-		$list .= '<li>' . bm_icon( $icon, 'bm-icon bm-icon--amber' ) . '<span>' . esc_html( $text ) . '</span></li>';
+		$list .= '<li>' . bm_icon( $icon, 'bm-icon bm-icon--accent' ) . '<span>' . esc_html( $text ) . '</span></li>';
 	}
 	return bm_wrap( 'bm-directions bm-panel', '<h2>So finden Sie uns</h2><ul>' . $list . '</ul>', 'div', array( 'data-bm-reveal' => '' ) );
 }

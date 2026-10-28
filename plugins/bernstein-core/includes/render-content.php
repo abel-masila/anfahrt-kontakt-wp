@@ -17,10 +17,10 @@ function bm_render_rooms( array $attributes ): string {
 		$features = '';
 		if ( ! $compact ) {
 			foreach ( $room['features'] as $feature ) {
-				$features .= '<li>' . bm_icon( 'check', 'bm-icon bm-icon--sm bm-icon--amber' ) . esc_html( $feature ) . '</li>';
+				$features .= '<li>' . bm_icon( 'check', 'bm-icon bm-icon--sm bm-icon--accent' ) . esc_html( $feature ) . '</li>';
 			}
 			if ( $room['accessible'] ) {
-				$features .= '<li>' . bm_icon( 'accessibility', 'bm-icon bm-icon--sm bm-icon--amber' ) . 'Ein Zimmer barrierefrei verfügbar</li>';
+				$features .= '<li>' . bm_icon( 'accessibility', 'bm-icon bm-icon--sm bm-icon--accent' ) . 'Ein Zimmer barrierefrei verfügbar</li>';
 			}
 			$features = '<ul class="bm-checklist">' . $features . '</ul>';
 		}
@@ -72,7 +72,7 @@ function bm_render_price_table(): string {
 			<thead><tr><th scope="col">Kategorie</th><th scope="col">Belegung</th><th scope="col" class="bm-table__price">Preis</th></tr></thead>
 			<tbody>%s</tbody>
 		</table></div>',
-		bm_icon( 'badge-euro', 'bm-icon bm-icon--amber' ),
+		bm_icon( 'badge-euro', 'bm-icon bm-icon--accent' ),
 		esc_html( bm_setting( 'prices_valid' ) ),
 		esc_html( bm_setting( 'prices_includes' ) ),
 		$rows
@@ -226,7 +226,7 @@ function bm_render_faq(): string {
 			'<details class="bm-faq__item" name="bm-faq"%s><summary><h3>%s</h3>%s</summary><div class="bm-faq__answer">%s</div></details>',
 			0 === $i ? ' open' : '',
 			esc_html( get_the_title( $post ) ),
-			bm_icon( 'chevron-down', 'bm-icon bm-icon--amber bm-faq__chevron' ),
+			bm_icon( 'chevron-down', 'bm-icon bm-icon--accent bm-faq__chevron' ),
 			wp_kses_post( wpautop( $post->post_content ) )
 		);
 	}
