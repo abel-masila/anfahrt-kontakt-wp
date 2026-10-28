@@ -1,15 +1,22 @@
 {
 	"core": null,
 	"phpVersion": "8.2",
-	"themes": ["./themes/bernstein"],
-	"plugins": ["./plugins/bernstein-core"],
+	"themes": [
+		"./themes/bernstein"
+	],
+	"plugins": [
+		"./plugins/bernstein-core"
+	],
 	"config": {
+		"WP_ENVIRONMENT_TYPE": "local",
 		"WP_DEBUG": true,
 		"WP_DEBUG_LOG": true,
 		"WP_DEBUG_DISPLAY": true,
-		"SCRIPT_DEBUG": false
+		"SCRIPT_DEBUG": false,
+		"DISALLOW_FILE_EDIT": true
 	},
 	"lifecycleScripts": {
 		"afterStart": "npx wp-env run cli wp theme activate bernstein && npx wp-env run cli wp language core install de_AT --activate && npx wp-env run cli wp bernstein seed"
-	}
+	},
+	"testsEnvironment": false
 }

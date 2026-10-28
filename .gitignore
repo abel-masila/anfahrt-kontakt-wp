@@ -1,4 +1,23 @@
 node_modules/
 .DS_Store
+
+# Logs und Debug-Ausgaben
 *.log
+debug.log
+
+# Geheimnisse und Umgebungs-Dateien – nie einchecken
+.env
+.env.*
+wp-config.php
+wp-config-*.php
+*.pem
+*.key
+
+# Datenbank-Exporte und Backups (enthalten Anfragen mit personenbezogenen Daten)
+*.sql
+*.sql.gz
+*.wpress
+*.zip
+!dist/*.zip
+/backups/
 /tmp/

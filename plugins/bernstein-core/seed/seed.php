@@ -186,6 +186,9 @@ function bm_run_seed( bool $force = false ): array {
 	flush_rewrite_rules( false );
 	$log[] = 'Permalinks: /%postname%/.';
 
+	// HTML-Filter für den Rest der Anfrage wieder aktivieren.
+	kses_init_filters();
+
 	return $log;
 }
 

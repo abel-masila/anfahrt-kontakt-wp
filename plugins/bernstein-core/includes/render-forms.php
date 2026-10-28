@@ -10,12 +10,17 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * HOOK: true zurückgeben (add_filter( 'bernstein_enquiry_server_mail', '__return_true' )),
- * damit das Motel bei jeder neuen Anfrage zusätzlich per wp_mail benachrichtigt wird.
+ * Soll das Motel bei jeder neuen Anfrage eine E-Mail bekommen?
+ *
+ * 1. Konstante BERNSTEIN_ENQUIRY_MAIL in wp-config.php (true/false) hat Vorrang.
+ * 2. Sonst: nur in der Umgebung „production“ (WP_ENVIRONMENT_TYPE), damit Test- und
+ *    Staging-Kopien keine E-Mails an das Motel verschicken.
+ * 3. Filter 'bernstein_enquiry_server_mail' kann das Ergebnis überschreiben.
  * Voraussetzung: Mailversand am Server (z. B. SMTP-Plugin) ist eingerichtet.
  */
 function bm_enquiry_server_mail_enabled(): bool {
-	return (bool) apply_filters( 'bernstein_enquiry_server_mail', false );
+	$enabled = defined( 'BERNSTEIN_ENQUIRY_MAIL' ) ? (bool) BERNSTEIN_ENQUIRY_MAIL : 'production' === wp_get_environment_type();
+	return (bool) apply_filters( 'bernstein_enquiry_server_mail', $enabled );
 }
 
 function bm_render_reservation_form(): string {

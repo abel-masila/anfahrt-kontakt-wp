@@ -51,6 +51,7 @@ function bm_settings_fields(): array {
 		'reservierung' => array(
 			'title'  => 'Reservierung',
 			'fields' => array(
+				'enquiry_retention_days' => array( 'Anfragen automatisch löschen nach (Tagen, 0 = nie)', 'number', '180' ),
 				'reservation_mode' => array(
 					'Reservierungs-Modus',
 					'select',

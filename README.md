@@ -53,11 +53,11 @@ In eigenen Buttons im Editor kann `#reservieren` als Link eingetragen werden –
 
 - Prüft alle Felder im Browser **und** am Server, speichert die Anfrage in der Datenbank (wp-admin → Anfragen) und zeigt eine Bestätigung. Die Anfrage ist ausdrücklich **keine verbindliche Buchung**.
 - Zusätzlich kann der Gast eine vorausgefüllte E-Mail an office@motel-marchegg.at öffnen. Falls das Speichern fehlschlägt, wird die E-Mail zum Hauptweg.
-- Spam-Schutz: verstecktes Feld + max. 5 Anfragen pro 10 Minuten je Absender. Es werden keine IP-Adressen gespeichert.
-- **E-Mail-Benachrichtigung ans Motel** ist vorbereitet, aber aus (kein Mailversand in Test-Umgebungen). Einschalten, sobald am Server Mailversand eingerichtet ist (z. B. SMTP-Plugin):
-  ```php
-  add_filter( 'bernstein_enquiry_server_mail', '__return_true' );
-  ```
+- Schutz: Prüfung aller Felder am Server, nur Anfragen von der eigenen Website (Origin-Prüfung), verstecktes Spam-Feld, max. 10 Anfragen pro 10 Minuten je Absender. Es werden keine IP-Adressen gespeichert.
+- **E-Mail-Benachrichtigung ans Motel** ist automatisch nur im Live-Betrieb aktiv (`WP_ENVIRONMENT_TYPE` = `production`) – Test-Kopien verschicken nie E-Mails. Erzwingen oder abschalten mit `define( 'BERNSTEIN_ENQUIRY_MAIL', true|false );` in `wp-config.php`.
+- **Datenschutz:** Anfragen sehen nur Administratoren und Redakteure. Alte Anfragen werden automatisch gelöscht (Einstellungen → Bernstein-Motel, Standard 180 Tage). Auskunft und Löschung je Gast über **Werkzeuge → Personenbezogene Daten exportieren/löschen**.
+
+Sicherheit, Umgebungen und empfohlene `wp-config.php`-Einstellungen: siehe [MIGRATION.md](MIGRATION.md#sicherheit--umgebungen-wp-configphp).
 
 ### Buchungs-Vorschau (`/buchung/`)
 
@@ -81,6 +81,6 @@ npm stop
 - **Impressum, Datenschutz, AGB** sind Demo-Inhalte von der bestehenden Website und müssen von der Kundin rechtlich geprüft und vervollständigt werden (u. a. UID-Nummer, Gewerbebehörde, Kammerzugehörigkeit).
 - **Datenschutzerklärung** um die Speicherung von Formular-Anfragen ergänzen (Zweck, Speicherdauer, Löschung). Alte Anfragen regelmäßig löschen.
 - Bilder sind die vorhandenen 960 × 500 px Fotos der bestehenden Website – für den Launch neue, hochauflösende Fotos empfehlen.
-- Mailversand einrichten und die Benachrichtigung einschalten (siehe oben).
+- `wp-config.php` am Live-Server einstellen und Mailversand einrichten (siehe MIGRATION.md).
 
 Umzug auf einen echten Server: siehe [MIGRATION.md](MIGRATION.md).

@@ -11,7 +11,11 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 		'bernstein seed',
 		function ( $args, $assoc_args ) {
 			require_once BM_PATH . 'seed/seed.php';
-			foreach ( bm_run_seed( ! empty( $assoc_args['force'] ) ) as $line ) {
+			$force = ! empty( $assoc_args['force'] );
+			if ( $force && 'production' === wp_get_environment_type() && empty( $assoc_args['yes-production'] ) ) {
+				WP_CLI::error( 'Produktionsumgebung: --force überschreibt alle Inhalte. Zur Bestätigung zusätzlich --yes-production angeben.' );
+			}
+			foreach ( bm_run_seed( $force ) as $line ) {
 				WP_CLI::log( $line );
 			}
 			WP_CLI::success( 'Bernstein-Motel ist eingerichtet.' );
@@ -24,6 +28,12 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 					'name'        => 'force',
 					'optional'    => true,
 					'description' => 'Bestehende Inhalte mit dem Demo-Stand überschreiben.',
+				),
+				array(
+					'type'        => 'flag',
+					'name'        => 'yes-production',
+					'optional'    => true,
+					'description' => 'Bestätigung für --force in der Produktionsumgebung.',
 				),
 			),
 		)
@@ -44,7 +54,8 @@ function bm_render_seed_page(): void {
 	$log = array();
 	if ( isset( $_POST['bm_seed'] ) && check_admin_referer( 'bm_seed' ) ) {
 		require_once BM_PATH . 'seed/seed.php';
-		$log = bm_run_seed( ! empty( $_POST['bm_force'] ) );
+		// Überschreiben ist in der Produktionsumgebung gesperrt – dort nur Fehlendes ergänzen.
+		$log = bm_run_seed( ! empty( $_POST['bm_force'] ) && 'production' !== wp_get_environment_type() );
 	}
 	?>
 	<div class="wrap">
@@ -55,7 +66,9 @@ function bm_render_seed_page(): void {
 		<?php endif; ?>
 		<form method="post">
 			<?php wp_nonce_field( 'bm_seed' ); ?>
-			<p><label><input type="checkbox" name="bm_force" value="1"> Bestehende Inhalte mit dem Demo-Stand <strong>überschreiben</strong> (Änderungen gehen verloren)</label></p>
+			<?php if ( 'production' !== wp_get_environment_type() ) : ?>
+				<p><label><input type="checkbox" name="bm_force" value="1"> Bestehende Inhalte mit dem Demo-Stand <strong>überschreiben</strong> (Änderungen gehen verloren)</label></p>
+			<?php endif; ?>
 			<?php submit_button( 'Inhalte einspielen', 'primary', 'bm_seed' ); ?>
 		</form>
 	</div>

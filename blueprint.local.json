@@ -16,6 +16,14 @@
 	"login": true,
 	"steps": [
 		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"WP_ENVIRONMENT_TYPE": "staging",
+				"DISALLOW_FILE_EDIT": true,
+				"WP_DEBUG": false
+			}
+		},
+		{
 			"step": "setSiteLanguage",
 			"language": "de_AT"
 		},

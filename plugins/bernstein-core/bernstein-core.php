@@ -18,6 +18,7 @@ define( 'BM_PATH', plugin_dir_path( __FILE__ ) );
 define( 'BM_URL', plugin_dir_url( __FILE__ ) );
 
 require_once BM_PATH . 'includes/helpers.php';
+require_once BM_PATH . 'includes/hardening.php';
 require_once BM_PATH . 'includes/settings.php';
 require_once BM_PATH . 'includes/post-types.php';
 require_once BM_PATH . 'includes/blocks.php';
@@ -29,6 +30,14 @@ register_activation_hook(
 	__FILE__,
 	function () {
 		bm_register_post_types();
+		bm_grant_enquiry_caps();
 		flush_rewrite_rules();
+	}
+);
+
+register_deactivation_hook(
+	__FILE__,
+	function () {
+		wp_clear_scheduled_hook( 'bm_enquiry_cleanup' );
 	}
 );
