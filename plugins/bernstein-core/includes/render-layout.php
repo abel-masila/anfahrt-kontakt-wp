@@ -176,7 +176,7 @@ function bm_render_footer(): string {
 			<div class="bm-footer__bottom-inner">
 				<p>© <?php echo esc_html( wp_date( 'Y' ) . ' ' . bm_setting( 'legal_name' ) . ' · ' . bm_setting( 'owner' ) ); ?></p>
 				<p><?php echo esc_html( bm_setting( 'street' ) . ' · ' . bm_setting( 'zip' ) . ' ' . bm_setting( 'city' ) . ' · ' . bm_setting( 'country' ) ); ?></p>
-				<p class="bm-footer__credit">developed by <a href="https://nangacss.com/" target="_blank" rel="noopener">NANGAcss</a></p>
+				<p class="bm-footer__credit">Developed by <a href="https://nangacss.com/" target="_blank" rel="noopener">NANGAcss</a></p>
 			</div>
 		</div>
 	</footer>
