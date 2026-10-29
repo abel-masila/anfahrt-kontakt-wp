@@ -148,18 +148,37 @@ function bm_render_activities( array $attributes ): string {
 				<div class="bm-card__body">
 					<p class="bm-card__tag">%s</p>
 					<h3 class="bm-card__title">%s</h3>
-					<p class="bm-card__text">%s</p>
+					<p class="bm-card__text">%s</p>%s
 				</div>
 			</article>',
 			bm_image_html( $thumb, $alt ? $alt : (string) get_post_meta( $thumb, '_wp_attachment_image_alt', true ), '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw' ),
 			esc_html( (string) get_post_meta( $post->ID, '_bm_tag', true ) ),
 			esc_html( get_the_title( $post ) ),
-			esc_html( (string) get_post_meta( $post->ID, '_bm_description', true ) )
+			esc_html( (string) get_post_meta( $post->ID, '_bm_description', true ) ),
+			bm_activity_links( (string) get_post_meta( $post->ID, '_bm_links', true ) )
 		);
 	}
 	// Bleiben in der letzten Dreierreihe zwei Karten übrig, stehen diese zwei breit in der ersten Reihe (z. B. 2 + 3).
 	$class = count( $posts ) % 3 === 2 ? 'bm-grid bm-grid--3 bm-grid--lead-2' : 'bm-grid bm-grid--3';
 	return bm_wrap( $class, $html );
+}
+
+/** Weiterführende Links einer Aktivität – eine Zeile pro Link: „Name | URL“. */
+function bm_activity_links( string $raw ): string {
+	$items = '';
+	foreach ( preg_split( '/\R/', $raw ) as $line ) {
+		[ $label, $url ] = array_map( 'trim', explode( '|', $line, 2 ) ) + array( '', '' );
+		if ( '' === $label || ! wp_http_validate_url( $url ) ) {
+			continue;
+		}
+		$items .= sprintf(
+			'<li><a href="%s" target="_blank" rel="noopener">%s%s<span class="screen-reader-text"> (öffnet in neuem Tab)</span></a></li>',
+			esc_url( $url ),
+			esc_html( $label ),
+			bm_icon( 'external-link', 'bm-icon bm-icon--sm' )
+		);
+	}
+	return $items ? '<ul class="bm-card__links" aria-label="Weiterführende Links">' . $items . '</ul>' : '';
 }
 
 function bm_render_gallery( array $attributes ): string {

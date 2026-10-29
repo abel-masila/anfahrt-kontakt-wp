@@ -24,6 +24,7 @@ function bm_meta_fields(): array {
 		'bm_activity' => array(
 			'_bm_tag'         => array( 'Kurz-Untertitel', 'text', 'z. B. „Storchenstadt Marchegg“' ),
 			'_bm_description' => array( 'Beschreibung', 'textarea', '' ),
+			'_bm_links'       => array( 'Links', 'textarea', 'Ein Link pro Zeile: Name | https://… – z. B. „Schloss Hof | https://www.schlosshof.at/“' ),
 			'_bm_image_alt'   => array( 'Bildbeschreibung (Alt-Text)', 'text', 'Leer lassen, um den Alt-Text aus der Mediathek zu verwenden.' ),
 		),
 		'bm_gallery'  => array(

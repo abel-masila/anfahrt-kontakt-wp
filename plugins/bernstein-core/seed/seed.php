@@ -82,7 +82,8 @@ function bm_run_seed( bool $force = false ): array {
 	$log[] = count( $data['rooms'] ) . ' Zimmerkategorien.';
 
 	// 4. Aktivitäten.
-	foreach ( $data['activities'] as $i => [ $slug, $title, $tag, $description, $image, $alt ] ) {
+	foreach ( $data['activities'] as $i => $activity ) {
+		[ $slug, $title, $tag, $description, $image, $alt ] = $activity;
 		bm_seed_post(
 			'bm_activity',
 			$slug,
@@ -91,6 +92,7 @@ function bm_run_seed( bool $force = false ): array {
 				'_bm_tag'         => $tag,
 				'_bm_description' => $description,
 				'_bm_image_alt'   => $alt,
+				'_bm_links'       => implode( "\n", $activity[6] ?? array() ),
 			),
 			$media[ $image ] ?? 0,
 			$force
@@ -239,6 +241,10 @@ function bm_seed_image( string $file, string $alt ): int {
  */
 function bm_seed_post( string $type, string $slug, array $fields, array $meta, int $thumbnail, bool $force ): int {
 	$existing = get_page_by_path( $slug, OBJECT, $type );
+	// get_page_by_path() findet auch Bilder mit gleichem Namen (z. B. „schloss-marchegg“).
+	if ( $existing && $existing->post_type !== $type ) {
+		$existing = null;
+	}
 	if ( $existing && ! $force ) {
 		return (int) $existing->ID;
 	}
