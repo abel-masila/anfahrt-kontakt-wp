@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
 function bms_pages( array $media ): array {
 	$cta   = bms_block( 'cta-banner' );
-	$owner = 'Unser Familienbetrieb wird von mir persönlich geführt und betreut. Möchten Sie ein Zimmer reservieren? Kontaktieren Sie mich per Telefon oder E-Mail – oder senden Sie eine Online-Anfrage. Ich freue mich auf Ihr Kommen!';
+	$owner = 'Unser Familienbetrieb – bestehend aus zwei gegenüberliegenden Häusern – wird von mir persönlich geführt und betreut. Möchten Sie ein Zimmer reservieren? Kontaktieren Sie mich per Telefon oder E-Mail – oder senden Sie eine Online-Anfrage. Ich freue mich auf Ihr Kommen!';
 
 	$home = array(
 		bms_hero(
@@ -33,26 +33,35 @@ function bms_pages( array $media ): array {
 		bms_block( 'trust-bar' ),
 		bms_section(
 			array(
-				bms_heading( 'Moderne Zimmer zu fairen Preisen', 'Sechzehn Doppelzimmer (eines barrierefrei), drei Standard- und drei Comfort-Dreibettzimmer. Alle Zimmer sind auch als Einzelzimmer reservierbar: € 55,00 pro Nacht.' ),
-				bms_block( 'rooms', array( 'compact' => true ) ),
-				bms_more( 'Alle Zimmer & Preisdetails', '/zimmer/' ),
-			)
-		),
-		bms_section(
-			array(
 				bms_columns(
 					array(
-						array( bms_image( $media['rundgang-bernsteinmotelmarchegg.jpg'], 'bm-photo' ) ),
+						array(
+							bms_group(
+								array(
+									bms_image( $media['aussen-zimmertrakt-herbst.jpg'], 'bm-house', 'Haus Feldgasse 1' ),
+									bms_image( $media['aussen-haus-rudolf-pataki-gasse.jpg'], 'bm-house', 'Haus Rudolf-Pataki-Gasse 1' ),
+								),
+								'bm-houses'
+							),
+						),
 						array(
 							bms_h( 'Persönlich geführt, ehrlich kalkuliert' ),
 							bms_p( 'Ob Privat- oder Geschäftsreisender – durch die zentrale Lage des Motels und das vielfältige Angebot in der Umgebung ist das Bernstein-Motel Marchegg das ideale Sprungbrett in einen erlebnisreichen Tag. Unser Beherbergungsbetrieb bietet Ihnen eine moderne, saubere Übernachtungsmöglichkeit zu einem fairen Preis.' ),
 							bms_p( 'Eingebettet in eine Landschaft aus Marchfeldschlössern, Rad- und Wanderwegen und den geheimnisvollen Aulandschaften von March und Donau – und dank der zentralen Lage sind die Metropolen Wien und Bratislava sowohl mit dem Auto als auch mit dem Zug erreichbar – ist unser Motel ein perfekter Ausgangspunkt.' ),
+							bms_image( $media['gastgeberin-alexandra-pataki.jpg'], 'bm-portrait' ),
 							bms_quote( '„' . $owner . '“', '— Alexandra Pataki, Gastgeberin' ),
 						),
 					),
 					'bm-split',
 					true
 				),
+			)
+		),
+		bms_section(
+			array(
+				bms_heading( 'Moderne Zimmer zu fairen Preisen', 'Sechzehn Doppelzimmer (eines barrierefrei), drei Standard- und drei Comfort-Dreibettzimmer. Alle Doppelzimmer sind auch als Einzelzimmer reservierbar: € 55,00 pro Nacht.' ),
+				bms_block( 'rooms', array( 'compact' => true ) ),
+				bms_more( 'Alle Zimmer & Preisdetails', '/zimmer/' ),
 			),
 			'bm-bg-alt'
 		),
@@ -119,7 +128,7 @@ function bms_pages( array $media ): array {
 			'blocks'  => array(
 				bms_section(
 					array(
-						bms_heading( 'Reservieren und buchen Sie gleich Ihr Zimmer!', 'Genießen Sie eine oder mehrere Nächte in unseren modernen und gemütlichen Zimmern. Alle Zimmer sind gänzlich gleich ausgestattet und können auch als Einzelzimmer reserviert werden.', 1 ),
+						bms_heading( 'Reservieren und buchen Sie gleich Ihr Zimmer!', 'Genießen Sie eine oder mehrere Nächte in unseren modernen und gemütlichen Zimmern. Alle Zimmer sind gänzlich gleich ausgestattet; unsere Doppelzimmer können auch als Einzelzimmer reserviert werden.', 1 ),
 						bms_block( 'rooms' ),
 						bms_block( 'price-table' ),
 						bms_block( 'price-conditions' ),
@@ -139,6 +148,24 @@ function bms_pages( array $media ): array {
 						bms_block( 'amenities' ),
 					),
 					'bm-section--top'
+				),
+				bms_section(
+					array(
+						bms_columns(
+							array(
+								array( bms_image( $media['schluesseltresor-spaete-anreise.jpg'], 'bm-photo' ) ),
+								array(
+									bms_h( 'Späte Anreise? Kein Problem!' ),
+									bms_p( 'Sie kommen erst spät am Abend an? Geben Sie uns einfach vorher Bescheid – wir senden Ihnen einen Zugangscode für unseren Schlüsseltresor.' ),
+									bms_p( 'So holen Sie Ihren Zimmerschlüssel ganz bequem selbst ab, auch außerhalb der Check-in-Zeiten.' ),
+									bms_buttons( array( array( 'Zimmer anfragen', '#reservieren', 'red' ), array( 'Kontakt aufnehmen', '/anfahrt-kontakt/', 'outline-red' ) ), 'bm-actions' ),
+								),
+							),
+							'bm-split',
+							true
+						),
+					),
+					'bm-bg-alt'
 				),
 				$cta,
 			),
@@ -291,7 +318,7 @@ function bms_pages( array $media ): array {
 						bms_h( 'Reservierung' ),
 						bms_p( 'Nach dem Absenden einer Anfrage wird die Verfügbarkeit geprüft. Danach erhalten Sie eine Reservierungsbestätigung von uns. Erst mit dieser Bestätigung ist Ihre Reservierung gültig.' ),
 						bms_h( 'Check-in & Check-out' ),
-						bms_p( 'Check-in: 14:00 – 21:00 Uhr (Ein späterer Check-in ist nach Vereinbarung möglich.) · Check-out: bis 10:00 Uhr.' ),
+						bms_p( 'Check-in: 14:00 – 21:00 Uhr (Späte Anreise nach Vereinbarung möglich – Schlüsselübergabe über den Schlüsseltresor mit Zugangscode.) · Check-out: bis 10:00 Uhr.' ),
 						bms_h( 'Bezahlung' ),
 						bms_p( 'Zahlung mit Bankomat- und Kreditkarte (VISA und Mastercard) möglich.' ),
 						$legal_note( 'Diese Seite ist Teil einer Design-Demo. Die vollständigen AGB werden vor Veröffentlichung von der Betreiberin geprüft und ergänzt.' ),

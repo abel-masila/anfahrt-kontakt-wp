@@ -273,6 +273,38 @@ img { max-width: 100%; height: auto; }
 }
 .wp-block-image.bm-photo--wide img { aspect-ratio: 16 / 10; }
 
+/* Die zwei Häuser des Familienbetriebs nebeneinander, je mit Adresse */
+.wp-block-group.bm-houses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.wp-block-image.bm-house { margin: 0; }
+.wp-block-image.bm-house img {
+	width: 100%;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	border-radius: 0.75rem;
+	box-shadow: var(--bm-shadow);
+}
+.wp-block-image.bm-house figcaption {
+	margin: 0.625rem 0 0;
+	font-family: var(--bm-font-display);
+	font-size: 1rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-align: center;
+	color: var(--bm-ink);
+}
+
+/* Porträt der Gastgeberin über ihrem Zitat */
+.wp-block-image.bm-portrait { margin: 1.75rem 0 0; }
+.wp-block-image.bm-portrait img {
+	width: 6rem;
+	height: 6rem;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: 50% 22%;
+	box-shadow: var(--bm-shadow);
+}
+.wp-block-image.bm-portrait + .wp-block-quote.bm-quote { margin-top: 1rem; }
+
 .wp-block-quote.bm-quote {
 	margin: 1.5rem 0 0;
 	padding: 0 0 0 1.25rem;

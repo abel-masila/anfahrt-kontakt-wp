@@ -372,7 +372,8 @@ body.bm-menu-open { overflow: hidden; }
 /* ---------- Kontakt & Anfahrt ---------- */
 
 .bm-contact { overflow: hidden; }
-.bm-contact__head { padding: 1.25rem 1.5rem; border-bottom: 4px solid var(--bm-accent); background: var(--bm-dark); }
+.bm-contact__head { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; border-bottom: 4px solid var(--bm-accent); background: var(--bm-dark); }
+.bm-contact__photo { flex: none; width: 4.5rem; height: 4.5rem; border: 2px solid rgb(255 255 255 / 0.85); border-radius: 50%; object-fit: cover; object-position: 50% 22%; }
 @media (min-width: 640px) { .bm-contact__head { padding-inline: 2rem; } }
 .bm-contact__head p { margin: 0; }
 .bm-contact__eyebrow { font-family: var(--bm-font-display); font-size: 0.875rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bm-accent-on-dark); }

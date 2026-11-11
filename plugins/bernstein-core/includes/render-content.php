@@ -54,7 +54,7 @@ function bm_render_rooms( array $attributes ): string {
 
 function bm_render_price_table(): string {
 	$rows = sprintf(
-		'<tr><th scope="row">Einzelzimmer</th><td>1 Person (jede Kategorie)</td><td class="bm-table__price">%s <span>/ Nacht</span></td></tr>',
+		'<tr><th scope="row">Einzelzimmer</th><td>1 Person im Doppelzimmer</td><td class="bm-table__price">%s <span>/ Nacht</span></td></tr>',
 		esc_html( bm_eur( bm_setting_float( 'single_price' ) ) )
 	);
 	foreach ( bm_rooms() as $room ) {
@@ -112,7 +112,7 @@ function bm_amenities(): array {
 		array( 'cigarette-off', '100 % rauchfrei', 'Alle Zimmer sind Nichtraucherzimmer.' ),
 		array( 'wifi', 'Gratis WLAN', 'Kostenloses WLAN in allen Zimmern.' ),
 		array( 'tv', 'Sat-TV', 'Flatscreen mit Satellitenempfang.' ),
-		array( 'shower-head', 'Dusche & WC', 'Eigenes Bad mit Pflegeprodukten.' ),
+		array( 'shower-head', 'Dusche & WC', 'Eigenes Bad mit Pflegeprodukten und Haarföhn.' ),
 		array( 'circle-parking', 'Gratis Parkplatz', 'Ein kostenloser Stellplatz pro Zimmer.' ),
 		array( 'bike', 'Fahrradgarage', 'Absperrbar – ideal für Radreisende.' ),
 		array( 'cooking-pot', 'Gemeinschaftsküche', 'Küche zur freien Benützung.' ),

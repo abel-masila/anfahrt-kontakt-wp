@@ -18,6 +18,7 @@ function bm_settings_fields(): array {
 				'name'          => array( 'Name des Betriebs', 'text', 'Bernstein-Motel Marchegg' ),
 				'legal_name'    => array( 'Firmenwortlaut', 'text', 'BERNSTEIN-Motel e.U.' ),
 				'owner'         => array( 'Inhaberin / Ansprechperson', 'text', 'Alexandra Pataki' ),
+				'owner_photo'   => array( 'Foto der Inhaberin (Bild-Adresse aus der Mediathek)', 'url', '' ),
 				'street'        => array( 'Straße', 'text', 'Feldgasse 1' ),
 				'zip'           => array( 'PLZ', 'text', '2293' ),
 				'city'          => array( 'Ort', 'text', 'Marchegg' ),
@@ -32,7 +33,7 @@ function bm_settings_fields(): array {
 			'title'  => 'Aufenthalt',
 			'fields' => array(
 				'check_in'      => array( 'Check-in', 'text', '14:00 – 21:00 Uhr' ),
-				'check_in_note' => array( 'Hinweis zum Check-in', 'text', 'Ein späterer Check-in ist nach Vereinbarung möglich.' ),
+				'check_in_note' => array( 'Hinweis zum Check-in', 'text', 'Späte Anreise? Kein Problem – geben Sie uns Bescheid, wir senden Ihnen den Zugangscode für unseren Schlüsseltresor.' ),
 				'check_out'     => array( 'Check-out', 'text', 'bis 10:00 Uhr' ),
 				'breakfast'     => array( 'Frühstück', 'textarea', 'Für ein herzhaftes Frühstück empfehlen wir das Café Bernstein – direkt gegenüber dem Motel. Montag bis Samstag ab 6:30 Uhr, an Sonn- und Feiertagen ab 8:00 Uhr. Für Frühaufsteher nach Voranmeldung Montag bis Freitag bereits ab 6:00 Uhr.' ),
 				'payment'       => array( 'Bezahlung', 'textarea', 'Zahlung mit Bankomat- und Kreditkarte (VISA und Mastercard) möglich.' ),
@@ -98,7 +99,7 @@ function bm_dog_fee_text(): string {
 }
 
 function bm_single_text(): string {
-	return 'Alle Zimmer sind auch als Einzelzimmer reservierbar: ' . bm_eur( bm_setting_float( 'single_price' ) ) . ' pro Nacht.';
+	return 'Alle Doppelzimmer sind auch als Einzelzimmer reservierbar: ' . bm_eur( bm_setting_float( 'single_price' ) ) . ' pro Nacht.';
 }
 
 add_action(

@@ -263,8 +263,10 @@ function bm_render_contact_card(): string {
 		bm_icon( 'external-link', 'bm-icon bm-icon--sm' )
 	);
 
-	$html = sprintf(
-		'<div class="bm-contact__head"><p class="bm-contact__eyebrow">Ihre Gastgeberin</p><p class="bm-contact__owner">%s</p><p class="bm-contact__company">%s</p></div><div class="bm-contact__body">%s</div>',
+	$photo = bm_setting( 'owner_photo' );
+	$html  = sprintf(
+		'<div class="bm-contact__head">%s<div><p class="bm-contact__eyebrow">Ihre Gastgeberin</p><p class="bm-contact__owner">%s</p><p class="bm-contact__company">%s</p></div></div><div class="bm-contact__body">%s</div>',
+		$photo ? sprintf( '<img class="bm-contact__photo" src="%s" alt="" width="72" height="72" loading="lazy">', esc_url( $photo ) ) : '',
 		esc_html( bm_setting( 'owner' ) ),
 		esc_html( bm_setting( 'legal_name' ) ),
 		$body

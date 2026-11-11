@@ -56,6 +56,12 @@ function bm_run_seed( bool $force = false ): array {
 		}
 	}
 	remove_filter( 'intermediate_image_sizes_advanced', '__return_empty_array', 99 );
+	// Foto der Gastgeberin für die Kontakt-Karte (nur, wenn noch keines gewählt ist).
+	$settings = (array) get_option( BM_OPTION, array() );
+	if ( empty( $settings['owner_photo'] ) && ! empty( $media['gastgeberin-alexandra-pataki.jpg'] ) ) {
+		$settings['owner_photo'] = (string) wp_get_attachment_url( $media['gastgeberin-alexandra-pataki.jpg'] );
+		update_option( BM_OPTION, $settings );
+	}
 	$log[] = count( array_filter( $media ) ) . ' Bilder in der Mediathek.';
 
 	// 3. Zimmer.

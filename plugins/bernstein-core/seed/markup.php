@@ -72,14 +72,14 @@ function bms_more( string $text, string $url ): string {
 	return bms_p( '<a href="' . esc_attr( $url ) . '">' . esc_html( $text ) . '</a>', 'bm-more' );
 }
 
-function bms_image( int $id, string $class = '' ): string {
+function bms_image( int $id, string $class = '', string $caption = '' ): string {
 	$attrs = array( 'id' => $id, 'sizeSlug' => 'large', 'linkDestination' => 'none' );
 	if ( $class ) {
 		$attrs['className'] = $class;
 	}
 	$alt = (string) get_post_meta( $id, '_wp_attachment_image_alt', true );
 	$src = (string) wp_get_attachment_url( $id );
-	return "<!-- wp:image" . bms_attrs( $attrs ) . " -->\n<figure class=\"" . trim( 'wp-block-image size-large ' . $class ) . "\"><img src=\"" . esc_url( $src ) . "\" alt=\"" . esc_attr( $alt ) . "\" class=\"wp-image-{$id}\"/></figure>\n<!-- /wp:image -->";
+	return "<!-- wp:image" . bms_attrs( $attrs ) . " -->\n<figure class=\"" . trim( 'wp-block-image size-large ' . $class ) . "\"><img src=\"" . esc_url( $src ) . "\" alt=\"" . esc_attr( $alt ) . "\" class=\"wp-image-{$id}\"/>" . ( $caption ? '<figcaption class="wp-element-caption">' . esc_html( $caption ) . '</figcaption>' : '' ) . "</figure>\n<!-- /wp:image -->";
 }
 
 /** Zwei Spalten. */
