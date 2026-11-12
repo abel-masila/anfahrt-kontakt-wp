@@ -39,7 +39,7 @@ function bms_pages( array $media ): array {
 							bms_group(
 								array(
 									bms_image( $media['aussen-zimmertrakt-herbst.jpg'], 'bm-house', 'Haus Feldgasse 1' ),
-									bms_image( $media['aussen-haus-rudolf-pataki-gasse.jpg'], 'bm-house', 'Haus Rudolf-Pataki-Gasse 1' ),
+									bms_image( $media['aussen-haupthaus-schraeg.jpg'], 'bm-house', 'Haus Rudolf-Pataki-Gasse 1' ),
 								),
 								'bm-houses'
 							),

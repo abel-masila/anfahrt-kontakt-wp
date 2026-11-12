@@ -273,13 +273,14 @@ img { max-width: 100%; height: auto; }
 }
 .wp-block-image.bm-photo--wide img { aspect-ratio: 16 / 10; }
 
-/* Die zwei Häuser des Familienbetriebs nebeneinander, je mit Adresse */
-.wp-block-group.bm-houses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+/* Die zwei Häuser des Familienbetriebs untereinander, je mit Adresse */
+.wp-block-group.bm-houses { display: grid; gap: 1.5rem; }
 .wp-block-image.bm-house { margin: 0; }
 .wp-block-image.bm-house img {
 	width: 100%;
-	aspect-ratio: 3 / 4;
+	aspect-ratio: 16 / 10;
 	object-fit: cover;
+	object-position: 50% 62%;
 	border-radius: 0.75rem;
 	box-shadow: var(--bm-shadow);
 }
