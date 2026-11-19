@@ -31,7 +31,7 @@ function bm_run_seed( bool $force = false ): array {
 
 	// 1. Grundeinstellungen.
 	update_option( 'blogname', 'Bernstein-Motel Marchegg' );
-	update_option( 'blogdescription', 'Übernachten im Marchfeld' );
+	update_option( 'blogdescription', 'Motel zwischen Wien & Bratislava' );
 	update_option( 'timezone_string', 'Europe/Vienna' );
 	update_option( 'date_format', 'd.m.Y' );
 	update_option( 'time_format', 'H:i' );
@@ -43,8 +43,10 @@ function bm_run_seed( bool $force = false ): array {
 	}
 	$log[] = 'Grundeinstellungen gesetzt.';
 
-	// 2. Bilder in die Mediathek (ohne Zwischengrößen – die Originale sind 960 px breit).
-	add_filter( 'intermediate_image_sizes_advanced', '__return_empty_array', 99 );
+	// 2. Bilder in die Mediathek. Nur die zwei Zwischengrößen, die das Layout braucht (768/1024 px) –
+	//    so liefern Galerie und Karten passende srcset-Größen statt der 1600-px-Originale.
+	$only_layout_sizes = fn( array $sizes ) => array_intersect_key( $sizes, array_flip( array( 'medium_large', 'large' ) ) );
+	add_filter( 'intermediate_image_sizes_advanced', $only_layout_sizes, 99 );
 	$media = array();
 	foreach ( $data['images'] as $file => $alt ) {
 		$media[ $file ] = bm_seed_image( $file, $alt );
@@ -55,7 +57,7 @@ function bm_run_seed( bool $force = false ): array {
 			$media[ $file ] = bm_seed_image( $file, '' );
 		}
 	}
-	remove_filter( 'intermediate_image_sizes_advanced', '__return_empty_array', 99 );
+	remove_filter( 'intermediate_image_sizes_advanced', $only_layout_sizes, 99 );
 	// Foto der Gastgeberin für die Kontakt-Karte (nur, wenn noch keines gewählt ist).
 	$settings = (array) get_option( BM_OPTION, array() );
 	if ( empty( $settings['owner_photo'] ) && ! empty( $media['gastgeberin-alexandra-pataki.jpg'] ) ) {

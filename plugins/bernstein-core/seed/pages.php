@@ -118,9 +118,9 @@ function bms_pages( array $media ): array {
 	return array(
 		'startseite'       => array(
 			'title'   => 'Startseite',
-			'excerpt' => 'Modernes, familiengeführtes Motel in Marchegg – zwischen Wien und Bratislava. Faire Preise, gratis Parkplatz & WLAN, absperrbare Fahrradgarage. Jetzt Zimmer anfragen!',
+			'excerpt' => 'Familiengeführtes Motel in Marchegg zwischen Wien und Bratislava: moderne Zimmer zu fairen Preisen, gratis Parkplatz & WLAN, Fahrradgarage. Jetzt anfragen!',
 			'blocks'  => $home,
-			'thumb'   => 'rundgang-bernsteinmotelmarchegg.jpg',
+			'thumb'   => 'aussen-haupthaus-schraeg.jpg',
 		),
 		'zimmer'           => array(
 			'title'   => 'Zimmer & Preise',
